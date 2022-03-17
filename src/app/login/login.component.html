@@ -1,1 +1,25 @@
-<p>login works!</p>
+
+<form class="box" style="margin:40px;">
+    <div class="field" >
+        <label for="" class="label">Email</label>
+        <div class="control has-icons-left">
+            <input type="email" placeholder="test@gmail.com" class="input" required>
+            <span class="icon is-small is-left">
+                @
+            </span>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label">Mot de Passe</label>
+        <div class="control has-icons-left">
+        <input class="input" type="password" placeholder="********">
+            <span class="icon is-small is-left">
+               <img [src]="Cadenas" style="width: 50%;">
+            </span>
+        </div>
+    </div>
+
+    <button class="button is-primary" style="margin-right:10px;">Connexion</button>
+    <a class="button is-warning">S'inscrire</a>
+</form>
