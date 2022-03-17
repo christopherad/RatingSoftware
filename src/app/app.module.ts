@@ -8,6 +8,9 @@ import { FooterComponent } from './footer/footer.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { LoginComponent } from './login/login.component';
 import { Erreur404Component } from './erreur404/erreur404.component';
+import { FilmsComponent } from './films/films.component';
+import { CastingComponent } from './casting/casting.component';
+import { CommentaireComponent } from './commentaire/commentaire.component';
 
 
 @NgModule({
@@ -18,6 +21,9 @@ import { Erreur404Component } from './erreur404/erreur404.component';
     AccueilComponent,
     LoginComponent,
     Erreur404Component,
+    FilmsComponent,
+    CastingComponent,
+    CommentaireComponent,
     
   ],
   imports: [
