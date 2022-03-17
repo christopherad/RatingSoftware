@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+ Cadenas:any="../../assets/Images/cadenas.png";
 
   constructor() { }
 
