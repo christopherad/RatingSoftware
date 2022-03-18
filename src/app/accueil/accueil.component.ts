@@ -34,5 +34,6 @@ export interface Film {
   _id: number;
   title: string;
   description : string;
+  poster_path:string;
 }
 
