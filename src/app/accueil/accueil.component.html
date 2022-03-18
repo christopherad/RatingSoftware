@@ -1,11 +1,12 @@
 
 <p>
 <ng-container *ngFor="let item of FilmPopular let i=index">
-    <li *ngIf="i<5" class="dropdown-item">{{item.title}}
+   <a routerLink="/Film/{{item.id}}"> <li *ngIf="i<5" class="dropdown-item">{{item.title}}
             <img src="https://image.tmdb.org/t/p/w300//{{item.poster_path}}">
-
+        {{item.id}}
 
     </li>
+    </a>
 </ng-container>
 
 

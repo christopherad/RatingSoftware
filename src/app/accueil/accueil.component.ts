@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { APIService } from "../api.service";
+import { Film } from  '../models/Film';
 
 @Component({
   selector: 'app-accueil',
@@ -30,10 +31,6 @@ FilmPopular!: Film[];
 }
 
 
-export interface Film {
-  _id: number;
-  title: string;
-  description : string;
-  poster_path:string;
-}
+
+
 

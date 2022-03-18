@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+import { APIService } from '../api.service';
+import { Film } from '../models/Film';
 
 @Component({
   selector: 'app-films',
@@ -9,9 +13,24 @@ export class FilmsComponent implements OnInit {
  ImageFilm:any="../../assets/Images/Joker.jpg";
  ImageFavori:any="../../assets/Images/coeur.png";
 
-  constructor() { }
+idFilm?:string|undefined
+Film!:Film
+
+
+  constructor(private route: ActivatedRoute,private api:APIService) {
+this.idFilm=this.route.snapshot.paramMap.get('id')!
+   }
+   
+  
+   
 
   ngOnInit(): void {
+    console.log(this.idFilm)
+    this.api.GetDetailFilm(this.idFilm!).subscribe(data=>{
+      this.Film=data;
+      console.log(this.Film)
+    })
   }
+
 
 }
