@@ -1,2 +1,9 @@
 
-<p>accueil works!</p>
+<p>
+<ng-container *ngFor="let item of FilmPopular let i=index">
+    <li *ngIf="i<5" class="dropdown-item">{{item.title}}</li>
+</ng-container>
+
+
+
+</p>

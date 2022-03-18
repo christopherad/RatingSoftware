@@ -11,6 +11,7 @@ import { Erreur404Component } from './erreur404/erreur404.component';
 import { FilmsComponent } from './films/films.component';
 import { CastingComponent } from './casting/casting.component';
 import { CommentaireComponent } from './commentaire/commentaire.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { CommentaireComponent } from './commentaire/commentaire.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
