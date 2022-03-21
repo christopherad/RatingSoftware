@@ -4,6 +4,7 @@ import {LoginComponent} from './login/login.component'
 import {AccueilComponent} from './accueil/accueil.component'
 import {Erreur404Component} from './erreur404/erreur404.component';
 import { FilmsComponent } from './films/films.component';
+import { SeriesComponent } from './series/series.component';
 
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path:"Login",component:LoginComponent},
   {path:"Accueil",component:AccueilComponent},
   {path:"Film/:id",component:FilmsComponent},
+  {path:"Serie/:id",component:SeriesComponent},
   {path:"**",component:Erreur404Component}
 ];
 

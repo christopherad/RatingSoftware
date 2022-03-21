@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { APIService } from '../api.service';
+import { Cast } from '../models/Cast';
 
 @Component({
   selector: 'app-casting',
@@ -7,9 +10,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CastingComponent implements OnInit {
  ImageJoaquim:any="../../assets/Images/joaquimphoenix.jpeg";
-  constructor() { }
+ ImagePeople:any="../../assets/Images/people.png";
+ idFilm?:string|undefined
+ Casting!:Cast[]
+  @Input() isSerie: any;
+ 
+
+ 
+  constructor(private route: ActivatedRoute,private api:APIService) {
+    this.idFilm=this.route.snapshot.paramMap.get('id')!
+   }
 
   ngOnInit(): void {
+        console.log(this.idFilm)
+    
+        this.isSerie?( this.api.GetCastTvShow(this.idFilm!).subscribe(cast=>{
+             this.Casting=cast.cast;
+             console.log(this.Casting)
+          })):(  this.isSerie(this.api.GetCastFilm(this.idFilm!).subscribe(cast=>{
+          this.Casting=cast.cast;
+        
+        })))
+
+
+
+      
+        
+        
+       
+        
   }
 
 }

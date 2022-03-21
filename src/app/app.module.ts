@@ -12,6 +12,7 @@ import { FilmsComponent } from './films/films.component';
 import { CastingComponent } from './casting/casting.component';
 import { CommentaireComponent } from './commentaire/commentaire.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SeriesComponent } from './series/series.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     FilmsComponent,
     CastingComponent,
     CommentaireComponent,
+    SeriesComponent,
     
   ],
   imports: [
