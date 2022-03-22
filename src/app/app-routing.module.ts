@@ -5,6 +5,7 @@ import {AccueilComponent} from './accueil/accueil.component'
 import {Erreur404Component} from './erreur404/erreur404.component';
 import { FilmsComponent } from './films/films.component';
 import { SeriesComponent } from './series/series.component';
+import { NoteDetailleComponent } from './note-detaille/note-detaille.component';
 
 
 const routes: Routes = [

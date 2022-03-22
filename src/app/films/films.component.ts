@@ -12,6 +12,7 @@ import { Film } from '../models/Film';
 export class FilmsComponent implements OnInit {
  ImageFilm:any="../../assets/Images/Joker.jpg";
  ImageFavori:any="../../assets/Images/coeur.png";
+ hideNoteFilm=true;
 
 idFilm?:string|undefined
 Film!:Film
@@ -29,6 +30,7 @@ this.idFilm=this.route.snapshot.paramMap.get('id')!
     this.api.GetDetailFilm(this.idFilm!).subscribe(data=>{
       this.Film=data;
       console.log(this.Film)
+      console.log(this.hideNoteFilm)
     })
   }
 

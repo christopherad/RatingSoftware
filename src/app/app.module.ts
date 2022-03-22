@@ -13,6 +13,7 @@ import { CastingComponent } from './casting/casting.component';
 import { CommentaireComponent } from './commentaire/commentaire.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SeriesComponent } from './series/series.component';
+import { NoteDetailleComponent } from './note-detaille/note-detaille.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { SeriesComponent } from './series/series.component';
     CastingComponent,
     CommentaireComponent,
     SeriesComponent,
+    NoteDetailleComponent,
     
   ],
   imports: [

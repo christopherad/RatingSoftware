@@ -51,7 +51,7 @@
                     <div class="column">
                             <button class="button is-outlined"
                                 style="border: 3px solid #81E6DA;border-radius: 5px; background-color:#363538; color:white; margin-left: 10px;">8.6/10</button>
-                            <button class="button is-outlined"
+                            <button class="button is-outlined" (click)="this.hideNoteFilm=!this.hideNoteFilm"
                                 style="border-radius: 5px; background-color:#81E6DA; color:black; margin-left: 20px;">Modifier / Detailler</button>
                             </div>
 
@@ -68,6 +68,8 @@
     </div>
     
 </div>
-<app-casting></app-casting>
-<app-commentaire></app-commentaire>
+<app-note-detaille [hidden]="hideNoteFilm"></app-note-detaille>
+<app-casting [hidden]="!hideNoteFilm"></app-casting>
+<app-commentaire [hidden]="!hideNoteFilm"></app-commentaire>
+
 </div>
