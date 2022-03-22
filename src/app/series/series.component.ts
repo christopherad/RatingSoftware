@@ -14,6 +14,7 @@ export class SeriesComponent implements OnInit {
    ImageFilm:any="../../assets/Images/Joker.jpg";
  ImageFavori:any="../../assets/Images/coeur.png";
 
+
 idSerie?:string|undefined
 Serie!:Serie
 isSerie=true
