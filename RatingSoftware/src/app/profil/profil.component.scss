@@ -1,0 +1,32 @@
+.container{
+    background-color: grey;
+    border-radius: 15px;
+    section{
+        #pseudo{
+            span{
+                background-color: #81E6DA;
+                margin-top: 35px;
+                border-radius: 13px;
+                padding: 5px 5px;
+            }
+        }
+        #bio{
+            color: white;
+            position: relative;
+            #paragraphe{
+                border: solid;
+                border-color: #81E6DA;
+                border-radius: 15px;
+                margin-right: 6%;
+            }
+        }
+    }
+    div{
+        div{
+            h5{
+                border-radius: 15px;
+                padding-left: 25px;
+            }
+        }
+    }
+}
