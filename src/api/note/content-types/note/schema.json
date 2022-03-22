@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "notes",
+  "info": {
+    "singularName": "note",
+    "pluralName": "notes",
+    "displayName": "Note"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "IdNote": {
+      "type": "uid"
+    },
+    "DateHeureNote": {
+      "type": "datetime"
+    },
+    "NomRessenti": {
+      "type": "string"
+    },
+    "PositionRessenti": {
+      "type": "string"
+    },
+    "NomRecommendation": {
+      "type": "string"
+    },
+    "Critique": {
+      "type": "text"
+    }
+  }
+}
