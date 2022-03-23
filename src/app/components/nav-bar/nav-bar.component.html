@@ -1,1 +1,51 @@
-<p>nav-bar works!</p>
+<nav class="navbar " role="navigation" aria-label="main navigation" style="background-color: #201F22;">
+    <div class="navbar-brand">
+        <a class="navbar-item" routerLink="/" routerLinkActive="">
+            <img [src]="ImageRatings"  >
+        </a>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+           
+            <a class="navbar-item " routerLink="/Accueil" routerLinkActive="true" style="padding: 10px;background-color: #81E6DA;">
+                Home
+            </a>
+
+            <a class="navbar-item 	" routerLink=""style="padding: 10px;background-color: #81E6DA;">
+                Movies&TV
+            </a>
+            <a class="navbar-item 	" routerLink=""style="padding: 10px;background-color: #81E6DA;">
+                Games
+            </a>
+            <a class="navbar-item 	" routerLink=""style="padding: 10px;background-color: #81E6DA;">
+                Music
+            </a>
+            
+           
+
+            
+        </div>
+
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <div class="buttons">
+                    <a class="button " routerLink="/Login" routerLinkActive="true" style="background-color: #81E6DA; margin-right: 10px;" >
+                        <strong>Login</strong>
+                    </a>
+                    <a class="button is-warning" routerLink="/" routerLinkActive="true">
+                        <img [src]="DarkMode"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<router-outlet></router-outlet>
