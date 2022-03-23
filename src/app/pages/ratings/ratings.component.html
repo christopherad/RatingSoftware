@@ -1,0 +1,68 @@
+<div style="margin-left:150px;margin-right:150px;">
+<h3 class="title is-3" style="color: white;">Note</h3>
+<div class="card columns " style="background-color: #363538; text-align: center;">
+    <div class="column is-6 " style="border-right : 2px solid #81E6DA;" >
+        <div style="margin-bottom: 10px;">
+        <h4 style="color: white; margin-bottom: 10px;" >Appréciations sur 10</h4>
+        <input max="10" min="0" class="input  is-small is-hovered is-primary" type="number" placeholder="Tapez votre note ici" >
+        </div>
+        <div>
+            <h4 style="color: white; margin-bottom: 10px;">Comment tu te sens ?</h4>
+            <div class="control">
+                <label class="radio">
+                    <input type="radio" name="answer" class="button is-ghost"  >
+                    <img [src]="EmojiContent">
+                </label>
+                <label class="radio">
+                    <input type="radio" name="answer" class="button is-ghost">
+                    <img [src]="EmojiEnnuye"/>
+                </label>
+                <label class="radio">
+                    <input type="radio" name="answer" class="button is-ghost">
+                    <img [src]="EmojiChoque" />
+                </label>
+                <label class="radio">
+                    
+                    <input type="radio" name="answer" class="button is-ghost">
+                    <img [src]="EmojiTriste" />
+                 <p hidden>Triste</p>
+                </label>
+                <label class="radio">
+                    <input type="radio" name="answer" class="button is-ghost">
+                    <img [src]="EmojiAmuse"/>
+
+                </label>
+            </div>
+        </div>
+        <div style="margin-top: 10px;">
+            <h4 style="color: white; margin-bottom: 10px;">Je recommande à  ?</h4>
+            <div style="display: flex;flex-direction: column;">
+                <div style="border: 3px solid; background-color: white; border-radius: 10px;">
+        <label class="checkbox">
+            Tout le Monde
+            <input type="checkbox">
+        </label>
+        </div>
+        <div style="border: 3px solid; background-color: white; border-radius: 10px;">
+            <label class="checkbox">
+                Fan du directeur
+                <input type="checkbox">
+               
+            </label>
+        </div>
+        <div style="border: 3px solid; background-color: white; border-radius: 10px;">
+            <label class="checkbox">
+                Fan du genre
+                <input type="checkbox">
+            </label>
+        </div>
+     </div>
+            </div>
+        </div>
+  
+    <div class="column is-6">
+        <h4 style="color: white; margin-bottom: 10px;" >Comment ça était ?</h4>
+    </div>
+
+</div>
+</div>

@@ -21,6 +21,7 @@ import { CastingComponent } from './pages/casting/casting.component';
 import { MoviesComponent } from './pages/movies/movies.component';
 import { CommentsComponent } from './pages/comments/comments.component';
 import { TvshowComponent } from './pages/tvshow/tvshow.component';
+import { RatingsComponent } from './pages/ratings/ratings.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { TvshowComponent } from './pages/tvshow/tvshow.component';
     ProfilComponent,
     CastingComponent,
     CommentsComponent,
-    TvshowComponent
+    TvshowComponent,
+    RatingsComponent
   ],
   imports: [
     BrowserModule,

@@ -68,9 +68,9 @@
     </div>
     
 </div>
-<!--<app-note-detaille [hidden]="hideNoteFilm"></app-note-detaille>
-!--> <app-casting [hidden]="!hideNoteFilm"></app-casting>
+<app-ratings [hidden]="hideNoteFilm"></app-ratings>
+ <app-casting [hidden]="!hideNoteFilm"></app-casting>
 
-<app-comments></app-comments>
+<app-comments [hidden]="!hideNoteFilm"></app-comments>
 
 </div>
