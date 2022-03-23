@@ -5,7 +5,7 @@ import { MoviesServices } from '../../services/Movies/Movies.service';
 import { Film } from '../../models/Film';
 
 @Component({
-  selector: 'app-films',
+  selector: 'app-movies',
   templateUrl: './movies.component.html',
   styleUrls: ['./movies.component.css']
 })

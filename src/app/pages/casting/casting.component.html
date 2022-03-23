@@ -1,0 +1,36 @@
+
+<div style="margin-left: 150px;
+    margin-right:150px;">
+<div>
+    <h3 class="title is-3" style="color: white;">Casting</h3>
+</div>
+
+<div class="columns">
+    <ng-container *ngFor="let item of Casting let i=index">
+    
+        <div class="is-flex-direction-row" style=" margin-top: 20px;" *ngIf="i<10">
+
+                <div class="column is-2">
+                        <div class="is-flex-direction-row" style="margin-bottom: -40px;">
+                            <figure class="image is-128x128" style="height: 240px;" >
+                                <img class="is-rounded"  onerror="this.src='../../assets/Images/people.png';" src="https://image.tmdb.org/t/p/w200//{{item.profile_path}}"/>
+                            </figure>
+                         </div>
+                        <div class="is-flex-direction-row" style="margin-left: 15px;">
+                            <p style="color: white;">{{item.name}}</p>
+                        </div>
+                </div>
+        </div>
+
+    </ng-container>
+
+
+    
+         
+        
+       
+  </div>
+
+
+
+
