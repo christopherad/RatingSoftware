@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "favoris",
+  "info": {
+    "singularName": "favori",
+    "pluralName": "favoris",
+    "displayName": "Favoris",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "itemID": {
+      "type": "integer"
+    },
+    "userID": {
+      "type": "integer"
+    }
+  }
+}
