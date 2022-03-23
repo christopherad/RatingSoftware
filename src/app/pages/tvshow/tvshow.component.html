@@ -1,0 +1,76 @@
+<div>
+    <div class="card columns " style="margin:30px;background-color: #363538;margin-left:150px;margin-right:150px;">
+
+        <div class="card-image ">
+            <figure class="image ">
+                <img style="width:90%;" alt="Placeholder image"
+                    src="https://image.tmdb.org/t/p/w300//{{Serie.poster_path}}">
+            </figure>
+        </div>
+        <div class="column is-8">
+            <div class="is-flex-direction-row" style="margin-left: 30px;">
+                <div class="columns">
+                    <div class="column  is-align-items-flex-start is-justify-content-flex-start">
+                        <h2 class="title is-2" style="color: white;">{{Serie.name}}</h2>
+                    </div>
+                    <div class="column  is-align-items-flex-end is-justify-content-flex-end" style="display:flex;">
+                        <button class="button" style="background-color: #81E6DA;">+ Ajouter à un dossier</button>
+                        <button class="button is-ghost"><img [src]="ImageFavori"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="is-flex-direction-row" style="margin-left: 30px;">
+                <ng-container *ngFor="let genre of Serie.genres let i=index">
+                    <span class="tag is-info" style="  margin-right: 5px;">{{genre.name}}</span>
+                </ng-container>
+            </div>
+            <div class="is-flex-direction-row" style="margin-left: 30px; margin-top: 20px;">
+                <h4 class="title is-4" style="color: white;">Synopsis</h4>
+            </div>
+            <div class="is-flex-direction-row" style="margin-left: 30px; margin-top: 20px;">
+                <p style="color: white;">{{Serie.overview}}</p>
+            </div>
+            <div class="is-flex-direction-row" style="margin-left: 30px; margin-top: 20px;">
+                <div class="columns">
+                    <div class="column" style="border-right: 2px solid #81E6DA;">
+                        <h4 class="title is-4" style="color: white;">Note</h4>
+                    </div>
+
+                    <div class="column">
+                        <h4 class="title is-4" style="color: white;">Ma Note</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="is-flex-direction-row" style="margin-left: 30px;">
+                <div class="columns">
+                    <div class="column" style="border-right: 2px solid #81E6DA;">
+                        <button class="button is-outlined"
+                            style="border: 3px solid #81E6DA;border-radius: 5px; background-color:#363538; color:white"><img
+                                [src]="ImageFavori" style="width: 50%;" />{{Serie.vote_count}}</button>
+                        <button class="button is-outlined"
+                            style="border: 3px solid #81E6DA;border-radius: 5px; background-color:#363538; color:white; margin-left: 10px;">{{Serie.vote_average}}/10</button>
+                    </div>
+                    <div class="column">
+                        <button class="button is-outlined"
+                            style="border: 3px solid #81E6DA;border-radius: 5px; background-color:#363538; color:white; margin-left: 10px;">8.6/10</button>
+                        <button class="button is-outlined"
+                            style="border-radius: 5px; background-color:#81E6DA; color:black; margin-left: 20px;">Modifier
+                            / Detailler</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div>
+
+
+            </div>
+        </div>
+
+    </div>
+    <app-casting [isSerie]="isSerie"> </app-casting>
+    <app-comments></app-comments>
+</div>
