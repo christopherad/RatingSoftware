@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { Film } from '../../models/Film'
 const API_KEY=environment.API_KEY;
 
-
+ 
 @Injectable({
   providedIn: 'root'
 })
@@ -37,6 +37,7 @@ export class MoviesServices {
   }
     GetCastTvShow(idSerie:string)
   {
+    ///
     return this.http.get<any>(`https://api.themoviedb.org/3/tv/${idSerie}/credits?api_key=${API_KEY}&language=fr`)
   }
 

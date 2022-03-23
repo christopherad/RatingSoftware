@@ -9,4 +9,5 @@ export interface Film {
   genres:Array<Genre>;
   vote_average:string;
   vote_count:string;
+  //
 }

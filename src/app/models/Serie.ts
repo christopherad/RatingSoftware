@@ -9,4 +9,5 @@ export interface Serie {
   genres:Array<Genre>;
   vote_average:string;
   vote_count:string;
+  //
 }
