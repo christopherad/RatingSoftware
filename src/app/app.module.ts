@@ -19,6 +19,7 @@ import { ProfilComponent } from './pages/profil/profil.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CastingComponent } from './pages/casting/casting.component';
 import { MoviesComponent } from './pages/movies/movies.component';
+import { CommentsComponent } from './pages/comments/comments.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { MoviesComponent } from './pages/movies/movies.component';
     LoginComponent,
     RegisterComponent,
     ProfilComponent,
-    CastingComponent
+    CastingComponent,
+    CommentsComponent
   ],
   imports: [
     BrowserModule,
