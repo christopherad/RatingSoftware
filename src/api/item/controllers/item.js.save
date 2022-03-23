@@ -1,0 +1,21 @@
+'use strict';
+
+/**
+ *  item controller
+ */
+
+const { createCoreController } = require('@strapi/strapi').factories;
+
+module.exports = createCoreController('api::item.item',({ strapi }) => ({
+
+	async userFavorites(userId){
+	  try{
+	    const response =  await strapi.db.query('api::item.item').findMany();
+	    //const response = await super.findOne(userId);
+	    return response;
+	  }catch(error){
+	    console.log('Erreur : ', error);
+	  }
+	}
+
+}));
