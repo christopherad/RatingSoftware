@@ -1,0 +1,24 @@
+.div-1 {
+    background-color:#8AE4FD;
+    
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
+    grid-gap: 0.5em;
+}
+
+.card {
+    height: max-content;
+    
+}
+
+body {
+    background-color:#474545;
+}
+
+h1 {
+    margin-left: 1em;
+}
+

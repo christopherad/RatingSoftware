@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders} from '@angular/common/http';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs';
-import { Film } from '../../models/Film'
+
 const API_KEY=environment.API_KEY;
 
 
