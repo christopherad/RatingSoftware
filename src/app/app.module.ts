@@ -12,13 +12,13 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CardComponent } from './components/card/card.component';
 import { Error404Component } from './components/error404/error404.component';
 import { HomeComponent } from './pages/home/home.component';
-import { MoviesComponent } from './pages/movies/movies.component';
 import { SearchComponent } from './pages/search/search.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ProfilComponent } from './pages/profil/profil.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CastingComponent } from './pages/casting/casting.component';
+import { MoviesComponent } from './pages/movies/movies.component';
 
 @NgModule({
   declarations: [

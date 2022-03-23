@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent implements OnInit {
+    ImageRatings:any="../../assets/Images/Ratings.png";
+  DarkMode:any="../../assets/Images/Darkmode.png"
 
   constructor() { }
 
