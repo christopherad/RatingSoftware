@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { FormsModule } from '@angular/forms';
+
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
@@ -22,6 +24,7 @@ import { MoviesComponent } from './pages/movies/movies.component';
 import { CommentsComponent } from './pages/comments/comments.component';
 import { TvshowComponent } from './pages/tvshow/tvshow.component';
 import { RatingsComponent } from './pages/ratings/ratings.component';
+import { ResultsComponent } from './components/results/results.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,8 @@ import { RatingsComponent } from './pages/ratings/ratings.component';
     CastingComponent,
     CommentsComponent,
     TvshowComponent,
-    RatingsComponent
+    RatingsComponent,
+    ResultsComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +52,7 @@ import { RatingsComponent } from './pages/ratings/ratings.component';
     BrowserAnimationsModule,
     MatIconModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -3,19 +3,21 @@ import { RouterModule, Routes } from '@angular/router';
 import { Error404Component } from './components/error404/error404.component';
 import { HomeComponent } from './pages/home/home.component';
 import { MoviesComponent } from './pages/movies/movies.component';
+import { SearchComponent } from './pages/search/search.component';
 import { TvshowComponent } from './pages/tvshow/tvshow.component';
 
 const routes: Routes = [
-    {path:"", redirectTo:"/Home",pathMatch:"full"},
-      {path:"Home",component:HomeComponent},
-      {path:"Movie/:id",component:MoviesComponent},
-       {path:"Serie/:id",component:TvshowComponent},
-      {path:"**",component:Error404Component},
-      
+  { path: '', redirectTo: '/Home', pathMatch: 'full' },
+  { path: 'Home', component: HomeComponent },
+  { path: 'Search/:id', component: SearchComponent },
+  { path: 'Search', component: SearchComponent },
+  { path: 'Movie/:id', component: MoviesComponent },
+  { path: 'Serie/:id', component: TvshowComponent },
+  { path: '**', component: Error404Component },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

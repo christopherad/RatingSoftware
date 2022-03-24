@@ -1,0 +1,50 @@
+.results {
+  margin: 48px 10%;
+  display: inline-block;
+  justify-content: center;
+}
+.total-result {
+  background-color: aqua;
+  border-radius: 10px;
+  padding: 10px;
+  max-width: 130px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.textBox {
+  padding: 20px 20px;
+  margin-left: 15px;
+}
+.image {
+  width: 128px;
+  height: auto;
+}
+.imgBox {
+  display: flex;
+  align-items: center;
+}
+.result {
+  display: flex;
+  padding: 20px 30px;
+  background-color: #363538;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  min-height: 232px;
+
+  /* overflow: hidden; */
+}
+.result .title {
+  font-weight: bold;
+  color: white;
+  font-size: 28px;
+}
+.result h2 {
+  font-weight: 500;
+  color: white;
+  font-size: 20px;
+}
+.result p {
+  font-weight: 500;
+  color: white;
+  font-size: 18px;
+}
