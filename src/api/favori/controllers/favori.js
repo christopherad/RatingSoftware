@@ -15,8 +15,50 @@ module.exports = createCoreController('api::favori.favori', ({ strapi }) => ({
 
     /**
      * 
+     * @param {*} favoris 
+     * @returns favoris that create
+     */
+    async createFavorites(favoris) {
+        try {
+            const response = await strapi.db.query('api::favori.favori').create({
+                data: { itemID: favoris.itemId, userID: favoris.userId }
+            });
+            return response;
+        } catch (error) {
+            console.log('Error de creation du favoris : ,', error);
+        }
+
+    },
+    /**
+     * 
+     * @param {*} item 
+     * @returns item that create
+     */
+    async createItem(item) {
+        try {
+            const response = await strapi.db.query('api::item.item').create({
+                data: {
+                    id: item.itemId,
+                    title: item.title,
+                    description: item.description,
+                    poster_path: item.poster_path,
+                    overview: item.overview,
+                    genres: item.genres,
+                    vote_average: item.vote_average,
+                    vote_count: item.vote_count,
+                    name: item.name
+                }
+            });
+            return response;
+        } catch (error) {
+            console.log('Error de creation de l\'item : ,', error);
+        }
+    },
+
+    /**
+     * 
      * @param {* contains itemID and userID who is in} favoris  
-     * @returns data who contains favoris infos if success and error
+     * @returns data that contains favoris infos if success and error
      * message when error
      */
     async addToFavorites(favoris) {
@@ -24,10 +66,15 @@ module.exports = createCoreController('api::favori.favori', ({ strapi }) => ({
         try {
             const favoriExist = await strapi.db.query('api::favori.favori').findOne({ where: { userID: userId, itemID: itemId } });
             if (!favoriExist) {
-                const response = await strapi.db.query('api::favori.favori').create({
-                    data: { itemID: itemId, userID: userId }
-                });
-                return { response: response };
+                const itemExist = await strapi.db.query('api::item.item').findOne({ where: { id: itemId } });
+                if (itemExist) {
+                    const createFav = await this.createFavorites(favoris.request.body);
+                    return {reponse : createFav};
+                } else {
+                    const createItem = await this.createItem(favoris.request.body);
+                    const createFav = await this.createFavorites(favoris.request.body);
+                    return {reponse : createFav};
+                }
             } else {
                 return { response: "Already in your favorites" };
             }
@@ -53,7 +100,7 @@ module.exports = createCoreController('api::favori.favori', ({ strapi }) => ({
                 const items = await strapi.db.query('api::item.item').findMany({ where: { id: response[i].itemID } });
                 const itemModel = {
                     idFavorites: response[i].id,
-                    item:items,
+                    item: items,
                 };
                 favoris.push(itemModel);
             }

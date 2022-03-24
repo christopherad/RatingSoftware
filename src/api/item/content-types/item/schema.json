@@ -12,16 +12,34 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Titre": {
+    "title": {
       "type": "string"
     },
-    "Description": {
+    "description": {
       "type": "text"
     },
     "category": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::categorie.categorie"
+    },
+    "poster_path": {
+      "type": "string"
+    },
+    "overview": {
+      "type": "string"
+    },
+    "vote_average": {
+      "type": "string"
+    },
+    "vote_count": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "genres": {
+      "type": "json"
     }
   }
 }
