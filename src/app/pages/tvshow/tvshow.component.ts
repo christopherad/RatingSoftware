@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { MoviesServices } from '../../services/Movies/Movies.service';
-import { Serie } from '../../models/Serie';
+import { Item } from '../../models/Item';
 
 @Component({
   selector: 'app-tvshow',
@@ -16,7 +16,7 @@ export class TvshowComponent implements OnInit {
 
 
 idSerie?:string|undefined
-Serie!:Serie
+Serie!:Item
 isSerie=true
 
   constructor(private route: ActivatedRoute,private api:MoviesServices) {this.idSerie=this.route.snapshot.paramMap.get('id')! }

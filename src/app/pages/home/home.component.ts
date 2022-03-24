@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesServices } from "../../services/Movies/Movies.service";
-import { Film } from  '../../models/Film'
-import { Serie } from '../../models/Serie';
+import { Item } from  '../../models/Item'
+
 
 @Component({
   selector: 'app-home',
@@ -10,8 +10,8 @@ import { Serie } from '../../models/Serie';
 })
 export class HomeComponent implements OnInit {
 
-FilmPopular!: Film[];
-TVShowPopular!: Serie[];
+FilmPopular!: Item[];
+TVShowPopular!: Item[];
   constructor(private api:MoviesServices) {       
     this.api.PopularFIlm().subscribe((data) => {
     console.log(data.results)

@@ -1,13 +1,14 @@
 import { Genre } from "./Genre";
 
-export interface Serie {
+export interface Item {
   id: number;
-  name: string;
+  title: string;
   description : string;
   poster_path:string;
   overview:string;
   genres:Array<Genre>;
   vote_average:string;
   vote_count:string;
+  name:string
   //
 }
