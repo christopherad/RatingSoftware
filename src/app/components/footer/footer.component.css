@@ -7,25 +7,35 @@
     padding-top: 1em;
     padding-bottom: 2em;
 }
-.level-left{
-    margin-left: 25px;
-}
 .level-item{
-    margin-right: 5px;}
+    text-align: center;
+    color: black;
+    margin-right: 5px;
+}
 #menu{
     background-color: black;
     margin-top: -3.5%;
 }
 #row{
     background-color: grey;
+    margin: 0 5em 0 5em;
 }
+#row h4{
+    padding: 5px;
+}
+
 h4{
     color: black;
     background-color: #81E6DA;
     border-radius: 5px;
 }
+
 a{
     text-align: center;
+    color: white;
+}
+
+span{
     color: white;
 }
 
@@ -33,6 +43,6 @@ p{
     color: white;
 }
 
-.logo{
-    margin-top: 50px;
+.columns.is-multiline.is-mobile.is-vcentered{
+    margin-bottom: 10px;
 }
