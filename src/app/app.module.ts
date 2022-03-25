@@ -25,10 +25,7 @@ import { CommentsComponent } from './pages/comments/comments.component';
 import { TvshowComponent } from './pages/tvshow/tvshow.component';
 import { RatingsComponent } from './pages/ratings/ratings.component';
 import { ResultsComponent } from './components/results/results.component';
-<<<<<<< HEAD
 import { BarRatingModule } from 'ngx-bar-rating';
-=======
->>>>>>> b6ab5195322888d384c5f88ecbcb595bbe994049
 
 @NgModule({
   declarations: [
@@ -56,10 +53,7 @@ import { BarRatingModule } from 'ngx-bar-rating';
     BrowserAnimationsModule,
     MatIconModule,
     HttpClientModule,
-<<<<<<< HEAD
    BarRatingModule,
-=======
->>>>>>> b6ab5195322888d384c5f88ecbcb595bbe994049
     FormsModule,
   ],
   providers: [],
