@@ -42,7 +42,9 @@ span{
 p{
     color: white;
 }
-
+#logo{
+    margin-left: 40px;
+}
 .columns.is-multiline.is-mobile.is-vcentered{
     margin-bottom: 10px;
 }
