@@ -1,1 +1,40 @@
-<p>search-bar works!</p>
+<div class="searchBar">
+  <div class="container">
+    <h1>Trouver des séries, des films, des jeux et des musiques</h1>
+    <div class="searchBox">
+      <div class="iconSearch">
+        <mat-icon
+          [inline]="true"
+          aria-hidden="false"
+          aria-label="Example search icon"
+          >search</mat-icon
+        >
+      </div>
+      <div class="searchInput">
+        <input
+          type="text"
+          placeholder="Trouver des series, des films, des jeux et des musiques"
+          [(ngModel)]="searchTerm"
+          (keydown.enter)="searchWeb()"
+          (keydown.enter)="onKeyEnterEvent($event)"
+        />
+
+        <!-- <a [routerLink]="['/Search', searchTerm]" class="btn btn-primary"
+          >Search</a
+        > -->
+      </div>
+      <!-- <a routerLink="/Search/{{ this.searchTerm }}">test</a> -->
+    </div>
+    <div class="wrapper">
+      <div class="infoSearch">
+        <h2>
+          Vous pouvez noter chaque film, épisodes de series, musiques et jeux.
+          Vous pouvez egalement voir les avis des autres utilisateurs.
+        </h2>
+        <div class="imgBox">
+          <img src="./assets/illustrationSearch.png" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
