@@ -22,6 +22,11 @@ import { MoviesComponent } from './pages/movies/movies.component';
 import { CommentsComponent } from './pages/comments/comments.component';
 import { TvshowComponent } from './pages/tvshow/tvshow.component';
 import { RatingsComponent } from './pages/ratings/ratings.component';
+import { BarRatingModule } from 'ngx-bar-rating';
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -40,7 +45,8 @@ import { RatingsComponent } from './pages/ratings/ratings.component';
     CastingComponent,
     CommentsComponent,
     TvshowComponent,
-    RatingsComponent
+    RatingsComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -48,6 +54,7 @@ import { RatingsComponent } from './pages/ratings/ratings.component';
     BrowserAnimationsModule,
     MatIconModule,
     HttpClientModule,
+   BarRatingModule
   ],
   providers: [],
   bootstrap: [AppComponent],

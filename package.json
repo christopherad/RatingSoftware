@@ -21,6 +21,8 @@
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
     "bulma": "^0.9.3",
+    "material-ui-rating": "^4.0.0-beta.2",
+    "ngx-bar-rating": "^3.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
