@@ -1,1 +1,31 @@
-<p>login works!</p>
+<div class="container">
+    <section class="level" id="level">
+        <a class="level-item is-unable mr-0" id="login">
+            Login
+        </a>
+        <a routerLink="/Register" class="level-item "style="text-decoration: none;" id="sign-up">
+            Sign Up
+        </a>
+    </section>
+    <section>
+            <form class="column">
+                <div class="field">
+                    <input class="input" type="email" placeholder="E-mail">
+                </div>
+                <div class="field">
+                    <input class="input" type="password" placeholder="Mot de passe">
+                </div>
+            </form>
+            <div class="column is-flex has-text-centered is-justify-content-center" id="connexion">
+                <p>Connexion</p>
+                <a>
+                    <img src="../../../assets/Images/Ellipse 86.png" width="50px">
+                </a>
+            </div>
+            <div class="is-flex is-justify-content-center" id="help">
+                <a routerLink="/Register">Créer un compte</a>
+                <a>Mot de passe oublié</a>
+            </div>
+    </section>
+</div>
+<router-outlet></router-outlet>
