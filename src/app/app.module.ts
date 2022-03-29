@@ -25,6 +25,7 @@ import { CommentsComponent } from './pages/comments/comments.component';
 import { TvshowComponent } from './pages/tvshow/tvshow.component';
 import { RatingsComponent } from './pages/ratings/ratings.component';
 import { ResultsComponent } from './components/results/results.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { ResultsComponent } from './components/results/results.component';
     MatIconModule,
     HttpClientModule,
     FormsModule,
+    NgxPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
