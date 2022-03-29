@@ -21,8 +21,12 @@
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
     "bulma": "^0.9.3",
+<<<<<<< HEAD
     "material-ui-rating": "^4.0.0-beta.2",
     "ngx-bar-rating": "^3.0.0",
+=======
+    "ngx-pagination": "^5.1.1",
+>>>>>>> search
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

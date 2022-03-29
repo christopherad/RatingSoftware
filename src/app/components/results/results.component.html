@@ -2,7 +2,10 @@
   <div class="total-result">{{ total }} Résultats</div>
   <div
     class="result column"
-    *ngFor="let result of results"
+    *ngFor="
+      let result of resultsMovies
+        | paginate: { itemsPerPage: 5, currentPage: pageMovies }
+    "
     routerLink="/Movie/{{ result.id }}"
   >
     <!-- <div class="imgBox">image en attente</div> -->
@@ -29,4 +32,7 @@
       </p>
     </div>
   </div>
+  <pagination-controls
+    (pageChange)="pageMovies = $event; getMovies()"
+  ></pagination-controls>
 </div>
