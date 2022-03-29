@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { Error404Component } from './components/error404/error404.component';
 import { HomeComponent } from './pages/home/home.component';
+import { LoginComponent } from './pages/login/login.component';
 import { MoviesComponent } from './pages/movies/movies.component';
+import { ProfilComponent } from './pages/profil/profil.component';
 import { SearchComponent } from './pages/search/search.component';
 import { TvshowComponent } from './pages/tvshow/tvshow.component';
 
@@ -13,6 +15,8 @@ const routes: Routes = [
   { path: 'Search', component: SearchComponent },
   { path: 'Movie/:id', component: MoviesComponent },
   { path: 'Serie/:id', component: TvshowComponent },
+  { path: 'Login', component: LoginComponent },
+  {path:'Profil',component:ProfilComponent},
   { path: '**', component: Error404Component },
 ];
 
