@@ -25,11 +25,8 @@ import { CommentsComponent } from './pages/comments/comments.component';
 import { TvshowComponent } from './pages/tvshow/tvshow.component';
 import { RatingsComponent } from './pages/ratings/ratings.component';
 import { ResultsComponent } from './components/results/results.component';
-<<<<<<< HEAD
-import { BarRatingModule } from 'ngx-bar-rating';
-=======
 import { NgxPaginationModule } from 'ngx-pagination';
->>>>>>> search
+import { BarRatingModule } from 'ngx-bar-rating';
 
 @NgModule({
   declarations: [
@@ -57,9 +54,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
     BrowserAnimationsModule,
     MatIconModule,
     HttpClientModule,
-   BarRatingModule,
     FormsModule,
     NgxPaginationModule,
+    BarRatingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
