@@ -7,6 +7,7 @@ import { MoviesComponent } from './pages/movies/movies.component';
 import { ProfilComponent } from './pages/profil/profil.component';
 import { SearchComponent } from './pages/search/search.component';
 import { TvshowComponent } from './pages/tvshow/tvshow.component';
+import { VideogamesComponent } from './pages/videogames/videogames.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/Home', pathMatch: 'full' },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'Search', component: SearchComponent },
   { path: 'Movie/:id', component: MoviesComponent },
   { path: 'Serie/:id', component: TvshowComponent },
+    { path: 'Videogame/:id', component: VideogamesComponent },
   { path: 'Login', component: LoginComponent },
   {path:'Profil',component:ProfilComponent},
   { path: '**', component: Error404Component },

@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -27,6 +27,7 @@ import { RatingsComponent } from './pages/ratings/ratings.component';
 import { ResultsComponent } from './components/results/results.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { BarRatingModule } from 'ngx-bar-rating';
+import { VideogamesComponent } from './pages/videogames/videogames.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { BarRatingModule } from 'ngx-bar-rating';
     TvshowComponent,
     RatingsComponent,
     ResultsComponent,
+    VideogamesComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,6 +59,7 @@ import { BarRatingModule } from 'ngx-bar-rating';
     FormsModule,
     NgxPaginationModule,
     BarRatingModule,
+      ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

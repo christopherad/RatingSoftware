@@ -1,8 +1,8 @@
-<form class="box" style="margin:40px;">
+<form class="box" style="margin:40px;" [formGroup]="ConnexionForm" (ngSubmit)=" onSubmit()" >
     <div class="field">
-        <label for="" class="label">Email</label>
+        <label for="email" class="label">Email</label>
         <div class="control has-icons-left">
-            <input type="email" placeholder="test@gmail.com" class="input" required>
+            <input id="email" type="email" formControlName="email" placeholder="test@gmail.com" class="input" required>
             <span class="icon is-small is-left">
                 @
             </span>
@@ -10,15 +10,15 @@
     </div>
 
     <div class="field">
-        <label class="label">Mot de Passe</label>
+        <label class="label" for="password">Mot de Passe</label>
         <div class="control has-icons-left">
-            <input class="input" type="password" placeholder="********">
+            <input class="input" type="password" id="password" placeholder="********" formControlName="password">
             <span class="icon is-small is-left">
                 <img [src]="Cadenas" style="width: 50%;">
             </span>
         </div>
     </div>
 
-    <button class="button is-primary" style="margin-right:10px;">Connexion</button>
+    <button type="submit" class="button is-primary" style="margin-right:10px;" [disabled]="!ConnexionForm.valid">Connexion</button>
     <a class="button is-warning">S'inscrire</a>
 </form>

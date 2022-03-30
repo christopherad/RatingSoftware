@@ -9,6 +9,9 @@ export interface Item {
   genres:Array<Genre>;
   vote_average:string;
   vote_count:string;
-  name:string
+  name:string;
+  background_image:string;
+  rating:string;
+  ratings_count:string
   //
 }
