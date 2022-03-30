@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 
 
 @Component({
@@ -9,10 +10,19 @@ import { Component, OnInit } from '@angular/core';
 export class NavBarComponent implements OnInit {
     ImageRatings:any="../../assets/Images/Ratings.png";
   DarkMode:any="../../assets/Images/Darkmode.png"
+  cookieValue!:String;
+  constructor(private cookieService:CookieService) { }
 
-  constructor() { }
+ 
 
   ngOnInit(): void {
+    this.cookieValue=this.cookieService.get('user');
+    console.log(this.cookieValue)
+  }
+  onClick()
+  {
+    this.cookieService.delete('user');
+    location.reload();
   }
 
 }

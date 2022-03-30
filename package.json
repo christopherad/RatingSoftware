@@ -23,6 +23,7 @@
     "axios": "^0.26.1",
     "bulma": "^0.9.3",
     "ngx-bar-rating": "^3.0.0",
+    "ngx-cookie-service": "^13.1.2",
     "ngx-pagination": "^5.1.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

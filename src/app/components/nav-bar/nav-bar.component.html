@@ -38,12 +38,24 @@
         <div class="navbar-end">
             <div class="navbar-item">
                 <div class="buttons">
-                    <a class="button " routerLink="/Login" routerLinkActive="true" style="background-color: #81E6DA; margin-right: 10px;" >
-                        <strong>Login</strong>
+                <ng-container *ngIf="cookieValue; else newDeb">
+                    <a class="button " routerLink="/Profil" routerLinkActive="true" style="background-color: #81E6DA; margin-right: 10px;">
+                        <strong> Profil</strong>
+                    </a>
+                    <button class="button is-warning" (click)="onClick()" style='margin-right: 10px;'>
+                        <strong> Déconnexion</strong>
+                    </button>
+                </ng-container>
+                <ng-template #newDeb>
+                    <a class="button " routerLink="/Login" routerLinkActive="true" style="background-color: #81E6DA; margin-right: 10px;">
+                        <strong> Login</strong>
                     </a>
                     <a class="button is-warning" routerLink="/" routerLinkActive="true">
-                        <img [src]="DarkMode"/>
+                        <img [src]="DarkMode" />
                     </a>
+                </ng-template>
+                   
+                  
                 </div>
             </div>
         </div>
