@@ -24,8 +24,9 @@
     color: white;
     gap:3em;
 }
+input{ width: fit-content;}
 #help{
-    gap: 2.5em;
+    gap: 2.25em;
 }
 #help a{
     color: white;
