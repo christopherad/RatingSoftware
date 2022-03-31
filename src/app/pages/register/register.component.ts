@@ -30,7 +30,7 @@ export class RegisterComponent implements OnInit {
         null,
         [Validators.required, Validators.email, Validators.minLength(6)],
       ],
-      password: [null, [Validators.required, Validators.minLength(3)]],
+      password: [null, [Validators.required, Validators.minLength(6)]],
     });
   }
   onSubmit() {
@@ -40,8 +40,5 @@ export class RegisterComponent implements OnInit {
     console.log(this.registerForm.value);
 
     this.registerService.register(this.registerForm.value);
-    // this.registerService.register (this.registerForm?.value).pipe(
-    // |map(user => this.router.navigate(['login']))
-    // ).subscribe();
   }
 }

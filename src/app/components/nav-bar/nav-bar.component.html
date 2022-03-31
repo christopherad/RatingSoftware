@@ -23,84 +23,78 @@
   </div>
 
   <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center">
-      <a
-        class="navbar-item"
-        routerLink="/Home"
-        routerLinkActive="true"
-        style="padding: 10px; background-color: #81e6da"
-      >
-        Home
-      </a>
-
-      <a
-        class="navbar-item"
-        routerLink=""
-        style="padding: 10px; background-color: #81e6da"
-      >
-        Movies&TV
-      </a>
-      <a
-        class="navbar-item"
-        routerLink=""
-        style="padding: 10px; background-color: #81e6da"
-      >
-        Games
-      </a>
-      <a
-        class="navbar-item"
-        routerLink=""
-        style="padding: 10px; background-color: #81e6da"
-      >
-        Music
-      </a>
-    </div>
-
     <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-           
-            <a class="navbar-item " routerLink="/Home" routerLinkActive="true" style="padding: 10px;background-color: #81E6DA;">
-                Home
-            </a>
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center">
+        <a
+          class="navbar-item"
+          routerLink="/Home"
+          routerLinkActive="true"
+          style="padding: 10px; background-color: #81e6da"
+        >
+          Home
+        </a>
 
-            <a class="navbar-item 	" routerLink=""style="padding: 10px;background-color: #81E6DA;">
-                Movies&TV
-            </a>
-            <a class="navbar-item 	" routerLink=""style="padding: 10px;background-color: #81E6DA;">
-                Games
-            </a>
-            <a class="navbar-item 	" routerLink=""style="padding: 10px;background-color: #81E6DA;">
-                Music
-            </a>
-            
-           
+        <a
+          class="navbar-item"
+          routerLink=""
+          style="padding: 10px; background-color: #81e6da"
+        >
+          Movies&TV
+        </a>
+        <a
+          class="navbar-item"
+          routerLink=""
+          style="padding: 10px; background-color: #81e6da"
+        >
+          Games
+        </a>
+        <a
+          class="navbar-item"
+          routerLink=""
+          style="padding: 10px; background-color: #81e6da"
+        >
+          Music
+        </a>
+      </div>
 
-            
-        </div>
-
-        <div class="navbar-end">
-            <div class="navbar-item">
-                <div class="buttons">
-                <ng-container *ngIf="cookieValue; else newDeb">
-                    <a class="button " routerLink="/Profil" routerLinkActive="true" style="background-color: #81E6DA; margin-right: 10px;">
-                        <strong> Profil</strong>
-                    </a>
-                    <button class="button is-warning" (click)="onClick()" style='margin-right: 10px;'>
-                        <strong> Déconnexion</strong>
-                    </button>
-                </ng-container>
-                <ng-template #newDeb>
-                    <a class="button " routerLink="/Login" routerLinkActive="true" style="background-color: #81E6DA; margin-right: 10px;">
-                        <strong> Login</strong>
-                    </a>
-                    <a class="button is-warning" routerLink="/" routerLinkActive="true">
-                        <img [src]="DarkMode" />
-                    </a>
-                </ng-template>
-                   
-                  
-                </div>
-            </div>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <ng-container *ngIf="cookieValue; else newDeb">
+              <a
+                class="button"
+                routerLink="/Profil"
+                routerLinkActive="true"
+                style="background-color: #81e6da; margin-right: 10px"
+              >
+                <strong> Profil</strong>
+              </a>
+              <button
+                class="button is-warning"
+                (click)="onClick()"
+                style="margin-right: 10px"
+              >
+                <strong> Déconnexion</strong>
+              </button>
+            </ng-container>
+            <ng-template #newDeb>
+              <a
+                class="button"
+                routerLink="/Login"
+                routerLinkActive="true"
+                style="background-color: #81e6da; margin-right: 10px"
+              >
+                <strong> Login</strong>
+              </a>
+              <a
+                class="button is-warning"
+                routerLink="/"
+                routerLinkActive="true"
+              >
+                <img [src]="DarkMode" />
+              </a>
+            </ng-template>
+          </div>
         </div>
       </div>
     </div>

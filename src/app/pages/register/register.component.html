@@ -41,7 +41,9 @@
       </div>
        -->
       <div class="submit">
-        <button type="submit">Créer mon compte</button>
+        <button [disabled]="!registerForm.valid" type="submit">
+          Créer mon compte
+        </button>
       </div>
 
       <div class="connexion" routerLink="/Login">Connexion</div>
