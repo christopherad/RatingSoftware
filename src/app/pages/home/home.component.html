@@ -90,6 +90,42 @@
       </ng-container>
     </div>
   </section>
+  <div class="div-1">
+    <font size="6pt">
+      <h1><b>Jeux Videos du moment</b></h1>
+    </font>
+  </div>
+  <section class="section">
+    <div class="container">
+      <!-- 	Card 1	 -->
+      <ng-container *ngFor="let item of VideoGamesPopular; let i = index">
+        <a routerLink="/Videogame/{{ item.id }}">
+          <li *ngIf="i < 5" class="dropdown-item">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image-card">
+                  <a><img src={{item.background_image}} alt="Rectangle-23" border="0" /></a>
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="title">
+                  <p>
+                    <b>{{ item.name }}</b>
+                  </p>
+                </div>
+              
+              </div>
+  
+              <footer class="card-footer">
+                <a href="#" class="card-footer-item">Plus de détails</a>
+              </footer>
+            </div>
+          </li>
+        </a>
+      </ng-container>
+    </div>
+  </section>
+  
 </body>
 
 <p></p>

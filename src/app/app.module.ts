@@ -27,6 +27,8 @@ import { RatingsComponent } from './pages/ratings/ratings.component';
 import { ResultsComponent } from './components/results/results.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { BarRatingModule } from 'ngx-bar-rating';
+import { VideogamesComponent } from './pages/videogames/videogames.component';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,7 @@ import { BarRatingModule } from 'ngx-bar-rating';
     TvshowComponent,
     RatingsComponent,
     ResultsComponent,
+    VideogamesComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,8 +61,10 @@ import { BarRatingModule } from 'ngx-bar-rating';
     ReactiveFormsModule,
     NgxPaginationModule,
     BarRatingModule,
+    ReactiveFormsModule,
+
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

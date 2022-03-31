@@ -1,1 +1,24 @@
-<p>login works!</p>
+<form class="box" style="margin:40px;" [formGroup]="ConnexionForm" (ngSubmit)=" onSubmit()" >
+    <div class="field">
+        <label for="email" class="label">Email</label>
+        <div class="control has-icons-left">
+            <input id="email" type="email" formControlName="email" placeholder="test@gmail.com" class="input" required>
+            <span class="icon is-small is-left">
+                @
+            </span>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label" for="password">Mot de Passe</label>
+        <div class="control has-icons-left">
+            <input class="input" type="password" id="password" placeholder="********" formControlName="password">
+            <span class="icon is-small is-left">
+                <img [src]="Cadenas" style="width: 50%;">
+            </span>
+        </div>
+    </div>
+
+    <button type="submit" class="button is-primary" style="margin-right:10px;" [disabled]="!ConnexionForm.valid">Connexion</button>
+    <a class="button is-warning">S'inscrire</a>
+</form>

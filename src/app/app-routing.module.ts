@@ -5,8 +5,10 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { MoviesComponent } from './pages/movies/movies.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { ProfilComponent } from './pages/profil/profil.component';
 import { SearchComponent } from './pages/search/search.component';
 import { TvshowComponent } from './pages/tvshow/tvshow.component';
+import { VideogamesComponent } from './pages/videogames/videogames.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/Home', pathMatch: 'full' },
@@ -17,6 +19,8 @@ const routes: Routes = [
   { path: 'Serie/:id', component: TvshowComponent },
   { path: 'Login', component: LoginComponent },
   { path: 'Register', component: RegisterComponent },
+  { path: 'Videogame/:id', component: VideogamesComponent },
+  { path: 'Profil', component: ProfilComponent },
   { path: '**', component: Error404Component },
 ];
 
