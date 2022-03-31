@@ -13,3 +13,23 @@ h2,
 p {
   font-family: "Roboto", sans-serif;
 }
+a {
+  color: black !important;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  outline: solid #81e6da 4px;
+}
+button {
+  background-color: #81e6da;
+  border: none;
+  padding: 30px 10%;
+  border-radius: 50px;
+  font-size: 23px;
+}
+.submit {
+  text-align: center;
+  margin-top: 7%;
+  /* margin: 40px 5% 0 5%; */
+}
