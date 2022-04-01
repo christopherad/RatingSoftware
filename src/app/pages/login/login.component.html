@@ -1,4 +1,4 @@
-<form
+<!-- <form
   class="box"
   style="margin: 40px"
   [formGroup]="ConnexionForm"
@@ -44,4 +44,36 @@
     Connexion
   </button>
   <a class="button is-warning" routerLink="/Register">S'inscrire</a>
-</form>
+</form> -->
+
+<div class="registerComponent">
+  <div class="form-container">
+    <div class="header-form">
+      <a routerLink="/Login">Connexion</a>
+      <a routerLink="/Register">Création de compte</a>
+    </div>
+    <form [formGroup]="ConnexionForm" (ngSubmit)="onSubmit()" class="form">
+      <input
+        type="email"
+        class="email"
+        name="email"
+        placeholder="Email"
+        formControlName="email"
+      />
+      <input
+        type="password"
+        class="password"
+        name="register"
+        placeholder="Mot de passe"
+        formControlName="password"
+      />
+      <div class="submit">
+        <button [disabled]="!ConnexionForm.valid" type="submit">
+          Connexion
+        </button>
+      </div>
+
+      <div class="connexion" routerLink="/Register">S'inscrire</div>
+    </form>
+  </div>
+</div>
