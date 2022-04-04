@@ -3,6 +3,7 @@
 html,
 body {
   height: 100%;
+  background-color: #202022 !important;
 }
 body {
   margin: 0;
@@ -28,6 +29,7 @@ button {
   border-radius: 50px;
   font-size: 23px;
 }
+
 .submit {
   text-align: center;
   margin-top: 7%;

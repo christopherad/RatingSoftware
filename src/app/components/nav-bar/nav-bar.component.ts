@@ -7,8 +7,7 @@ import { CookieService } from 'ngx-cookie-service';
   styleUrls: ['./nav-bar.component.css'],
 })
 export class NavBarComponent implements OnInit {
-  ImageRatings: any = '../../assets/Images/Ratings.png';
-  DarkMode: any = '../../assets/Images/Darkmode.png';
+  ImageRatings: any = '../../assets/Images/logoV2.png';
   cookieValue!: String;
   constructor(private cookieService: CookieService) {}
 
