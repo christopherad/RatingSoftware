@@ -11,6 +11,7 @@ export interface User {
   providedIn: 'root',
 })
 export class RegisterService {
+  token!:string
   private authApiBase: string =
     'http://51.158.72.178:1337/api/auth/local/register';
 
@@ -28,6 +29,7 @@ export class RegisterService {
         console.log('Well done!');
         console.log('User profile', response.data.user);
         console.log('User token', response.data.jwt);
+        this.token=response.data.jwt;
       })
       .catch((error) => {
         // Handle error.
@@ -35,6 +37,9 @@ export class RegisterService {
       });
     axios
       .post(`http://51.158.72.178:1337/api/auth/send-email-confirmation`, {
+           headers: {
+      Authorization: `Bearer ${this.token}`,
+    },
         email: user.email, // user's email
       })
       .then((response) => {
