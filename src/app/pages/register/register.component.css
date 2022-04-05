@@ -1,5 +1,5 @@
 .registerComponent {
-  margin: 10% 25%;
+  margin: 10% 30%;
 }
 .form-container {
   display: block;
@@ -12,12 +12,12 @@
   justify-content: space-around;
   padding: 25px 0;
   background: #81e6da;
-  border-radius: 10px 10px 0px 0px;
+  border-radius: 50px 50px 0px 0px;
   font-size: 25px;
 }
 .form {
   display: grid;
-  border-radius: 0 0 10px 10px;
+  border-radius: 0 0 50px 50px;
   background-color: #313030;
 }
 input[type="text"],
@@ -59,10 +59,11 @@ input[type="email"] {
   align-self: center;
 } */
 .connexion {
-  margin-top: 7%;
+  margin: 7% 0 15px 0;
   text-align: center;
   color: white;
   text-decoration: underline;
+  font-weight: 500;
   font-size: 23px;
 }
 /* 
