@@ -13,7 +13,8 @@ export class SearchService {
 
   getResults(searchTerm: string, page: number): Observable<any> {
     return this.http.get(
-      `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchTerm}&language=fr&page=${page}&include_adult=false`
+      `https://api.themoviedb.org/3/search/multi?api_key=${API_KEY}&query=${searchTerm}&page=${page}&include_adult=false
+     `
     );
   }
   passResults(results: any): void {
