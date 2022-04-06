@@ -31,8 +31,8 @@ ConnexionForm=new FormGroup({
     const {email,password}=this.ConnexionForm.value
     axios
   .post('http://51.158.72.178:1337/api/auth/local', {
-    identifier: "fahimgha10@gmail.com",
-    password: "testtest"
+    identifier: email,
+    password: password
   })
   .then(response => {
     // Handle success.
