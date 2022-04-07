@@ -1,6 +1,6 @@
 import { Genre } from "./Genre";
 
-export interface Film {
+export interface Item {
   id: number;
   title: string;
   description : string;
@@ -9,5 +9,9 @@ export interface Film {
   genres:Array<Genre>;
   vote_average:string;
   vote_count:string;
+  name:string;
+  background_image:string;
+  rating:string;
+  ratings_count:string
   //
 }

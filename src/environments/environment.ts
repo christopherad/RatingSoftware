@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   API_KEY: 'e4598f953f8303298a63d189d54d0015',
+  APIVIDEOGAMES_KEY:'2b181e73a9b54bab85ab2e76bf698e45'
 };
 
 /*

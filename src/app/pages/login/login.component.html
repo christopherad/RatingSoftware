@@ -1,31 +1,31 @@
-<div class="container">
-    <section class="level" id="level">
-        <a class="level-item is-unable mr-0" id="login">
-            Login
-        </a>
-        <a routerLink="/Register" class="level-item "style="text-decoration: none;" id="sign-up">
-            Sign Up
-        </a>
-    </section>
-    <section>
-            <form class="column">
-                <div class="field">
-                    <input class="input form-control" type="email" placeholder="E-mail">
-                </div>
-                <div class="field">
-                    <input class="input form-control" type="password" placeholder="Mot de passe">
-                </div>
-                <div class="column is-flex has-text-centered is-justify-content-center" id="connexion">
-                    <p>Connexion</p>
-                    <a>
-                        <img type="submit" src="../../../assets/Images/Ellipse 86.png" width="50px">
-                    </a>
-                </div>
-            </form>
-            <div class="is-flex is-justify-content-center" id="help">
-                <a routerLink="/Register">Créer un compte</a>
-                <a>Mot de passe oublié</a>
-            </div>
-    </section>
+<div class="registerComponent">
+  <div class="form-container">
+    <div class="header-form">
+      <a routerLink="/Login">Connexion</a>
+      <a routerLink="/Register">Création de compte</a>
+    </div>
+    <form [formGroup]="ConnexionForm" (ngSubmit)="onSubmit()" class="form">
+      <input
+        type="email"
+        class="email"
+        name="email"
+        placeholder="Email"
+        formControlName="email"
+      />
+      <input
+        type="password"
+        class="password"
+        name="register"
+        placeholder="Mot de passe"
+        formControlName="password"
+      />
+      <div class="submit">
+        <button [disabled]="!ConnexionForm.valid" type="submit">
+          Connexion
+        </button>
+      </div>
+
+      <div class="connexion" routerLink="/Register">S'inscrire</div>
+    </form>
+  </div>
 </div>
-<router-outlet></router-outlet>

@@ -1,54 +1,164 @@
+<!-- <nav
+  class="navbar"
+  role="navigation"
+  aria-label="main navigation"
+  style="background-color: #201f22"
+>
+  <div class="navbar-brand">
+    <a class="navbar-item" routerLink="/" routerLinkActive="">
+      <img [src]="ImageRatings" />
+    </a>
 
+    <a
+      role="button"
+      class="navbar-burger"
+      aria-label="menu"
+      aria-expanded="false"
+      data-target="navbarBasicExample"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
 
-<nav class="navbar " role="navigation" aria-label="main navigation" style="background-color: #201F22;">
-    <div class="navbar-brand">
-        <a class="navbar-item" routerLink="/" routerLinkActive="">
-            <img [src]="ImageRatings"  >
-        </a>
-
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-        </a>
-    </div>
-
+  <div id="navbarBasicExample" class="navbar-menu">
     <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-           
-            <a class="navbar-item " routerLink="/Home" routerLinkActive="true" style="padding: 10px;background-color: #81E6DA;">
-                Home
-            </a>
+      <div class="navbar-start">
+        <a
+          class="navbar-item"
+          routerLink="/Home"
+          routerLinkActive="true"
+          style="padding: 10px; background-color: #81e6da"
+        >
+          Home
+        </a>
 
-            <a class="navbar-item 	" routerLink=""style="padding: 10px;background-color: #81E6DA;">
-                Movies&TV
-            </a>
-            <a class="navbar-item 	" routerLink=""style="padding: 10px;background-color: #81E6DA;">
-                Games
-            </a>
-            <a class="navbar-item 	" routerLink=""style="padding: 10px;background-color: #81E6DA;">
-                Music
-            </a>
-            
-           
+        <a
+          class="navbar-item"
+          routerLink=""
+          style="padding: 10px; background-color: #81e6da"
+        >
+          Movies&TV
+        </a>
+        <a
+          class="navbar-item"
+          routerLink=""
+          style="padding: 10px; background-color: #81e6da"
+        >
+          Games
+        </a>
+        <a
+          class="navbar-item"
+          routerLink=""
+          style="padding: 10px; background-color: #81e6da"
+        >
+          Music
+        </a>
+      </div>
 
-            
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <ng-container *ngIf="cookieValue; else newDeb">
+              <a
+                class="button"
+                routerLink="/Profil"
+                routerLinkActive="true"
+                style="background-color: #81e6da; margin-right: 10px"
+              >
+                <strong> Profil</strong>
+              </a>
+              <button
+                class="button is-warning"
+                (click)="onClick()"
+                style="margin-right: 10px"
+              >
+                <strong> Déconnexion</strong>
+              </button>
+            </ng-container>
+            <ng-template #newDeb>
+              <a
+                class="button"
+                routerLink="/Login"
+                routerLinkActive="true"
+                style="background-color: #81e6da; margin-right: 10px"
+              >
+                <strong> Login</strong>
+              </a>
+              <a
+                class="button is-warning"
+                routerLink="/"
+                routerLinkActive="true"
+              >
+                <img [src]="DarkMode" />
+              </a>
+            </ng-template>
+          </div>
         </div>
-
-        <div class="navbar-end">
-            <div class="navbar-item">
-                <div class="buttons">
-                    <a class="button " routerLink="/Login" routerLinkActive="true" style="background-color: #81E6DA; margin-right: 10px;" >
-                        <strong>Login</strong>
-                    </a>
-                    <a class="button is-warning" routerLink="/" routerLinkActive="true">
-                        <img [src]="DarkMode"/>
-                    </a>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
+  </div>
+</nav> -->
+<nav>
+  <div class="navbar" role="navigation" aria-label="main navigation">
+    <div class="logo">
+      <img class="navbar-logo" routerLink="/Home" [src]="ImageRatings" />
+      <!-- 
+      <a
+        role="button"
+        class="navbar-burger"
+        aria-label="menu"
+        aria-expanded="false"
+        data-target="navbarBasicExample"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a> -->
+    </div>
+    <!-- <div id="navbarBasicExample" class="navbar-menu">
+      <div id="navbarBasicExample" class="navbar-menu"> -->
+    <div class="navbar-start">
+      <a class="navbar-item" routerLink="/Home" routerLinkActive="true">
+        Home
+      </a>
+      <a class="navbar-item"> Movies&TV </a>
+      <a class="navbar-item"> Games </a>
+      <a class="navbar-item"> Music </a>
+    </div>
+    <div class="navbar-end">
+      <!-- <a class="navbar-item" routerLink=""> Login </a> -->
+
+      <ng-container *ngIf="cookieValue; else newDeb">
+        <a class="button" routerLink="/Profil" routerLinkActive="true">
+          Profil
+        </a>
+        <button class="button is-warning" (click)="onClick()">
+          Déconnexion
+        </button>
+      </ng-container>
+      <ng-template #newDeb>
+        <a
+          class="navbar-item navbar-login"
+          routerLink="/Login"
+          routerLinkActive="true"
+        >
+          Login
+        </a>
+        <div class="dark-mode">
+          <mat-icon
+            [inline]="true"
+            aria-hidden="false"
+            aria-label="Example light_mode_outline icon"
+            >light_mode</mat-icon
+          >
+        </div>
+      </ng-template>
+    </div>
+  </div>
+  <!-- </div>
+  </div> -->
 </nav>
 
 <router-outlet></router-outlet>
-

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-ratings',
   templateUrl: './ratings.component.html',
@@ -11,9 +12,19 @@ export class RatingsComponent implements OnInit {
    EmojiTriste:any="../../assets/Images/EmojiTriste.png";
    EmojiAmuse:any="../../assets/Images/EmojiAmusé.png";
    EmojiChoque:any="../../assets/Images/EmojiChoqué.png";
-  constructor() { }
+rate?:number
+rate2?:number
+rate3?:number
+rate4?:number
+  constructor() { 
+this.rate=1
+this.rate2=1
+this.rate3=1;
+this.rate4=1;
+  }
 
   ngOnInit(): void {
+    
   }
 
 }

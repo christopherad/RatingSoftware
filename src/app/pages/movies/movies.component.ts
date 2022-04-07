@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { MoviesServices } from '../../services/Movies/Movies.service';
-import { Film } from '../../models/Film';
+import { Item } from '../../models/Item';
 
 @Component({
   selector: 'app-movies',
@@ -15,7 +15,7 @@ export class MoviesComponent implements OnInit {
  hideNoteFilm=true;
 
 idFilm?:string|undefined
-Film!:Film
+Film!:Item
 
 
   constructor(private route: ActivatedRoute,private api:MoviesServices) {

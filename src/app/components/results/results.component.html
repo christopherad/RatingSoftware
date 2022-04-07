@@ -2,31 +2,51 @@
   <div class="total-result">{{ total }} Résultats</div>
   <div
     class="result column"
-    *ngFor="let result of results"
-    routerLink="/Movie/{{ result.id }}"
+    *ngFor="
+      let result of resultsMovies
+        | paginate: { itemsPerPage: 5, currentPage: pageMovies }
+    "
+    [routerLink]="
+      result.media_type === 'movie'
+        ? ['/Movie/', result?.id]
+        : ['/Serie/', result?.id]
+    "
   >
-    <!-- <div class="imgBox">image en attente</div> -->
-    <div class="imgBox">
-      <figure class="image">
-        <a href="https://imgbb.com/"
-          ><img
-            src="https://image.tmdb.org/t/p/w300//{{ result?.poster_path }}"
-            alt="Rectangle-23"
-        /></a>
-        <!-- <figure class="image"></figure> -->
-      </figure>
-    </div>
+    <div
+      *ngIf="result.media_type == 'movie' || result.media_type == 'tv'"
+      class="test"
+    >
+      <div class="imgBox">
+        <figure class="image">
+          <a
+            ><img
+              src="https://image.tmdb.org/t/p/w300//{{ result?.poster_path }}"
+              alt="Rectangle-23"
+          /></a>
+          <!-- <figure class="image"></figure> -->
+        </figure>
+      </div>
 
-    <div class="textBox">
-      <h1 class="title">
-        {{ result?.title }}
-      </h1>
-      <h2>
-        {{ result?.release_date }}
-      </h2>
-      <p>
-        {{ result?.overview }}
-      </p>
+      <div class="textBox">
+        <div class="first-box">
+          <h1 class="title">
+            {{ result?.title || result?.name }}
+          </h1>
+          <div class="media-type">{{ result?.media_type }}</div>
+        </div>
+
+        <h2>
+          {{ result?.release_date }}
+        </h2>
+        <p>
+          {{ result?.overview }}
+        </p>
+      </div>
     </div>
   </div>
+  <!-- <div class="imgBox">image en attente</div> -->
+
+  <pagination-controls
+    (pageChange)="pageMovies = $event; getMovies()"
+  ></pagination-controls>
 </div>

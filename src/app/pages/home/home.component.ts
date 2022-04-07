@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesServices } from "../../services/Movies/Movies.service";
-import { Film } from  '../../models/Film'
-import { Serie } from '../../models/Serie';
+import { Item } from  '../../models/Item'
+import { VideogamesService } from 'src/app/services/videogames.service';
+
 
 @Component({
   selector: 'app-home',
@@ -10,9 +11,10 @@ import { Serie } from '../../models/Serie';
 })
 export class HomeComponent implements OnInit {
 
-FilmPopular!: Film[];
-TVShowPopular!: Serie[];
-  constructor(private api:MoviesServices) {       
+FilmPopular!: Item[];
+TVShowPopular!: Item[];
+VideoGamesPopular!:Item[];
+  constructor(private api:MoviesServices,private apivideo:VideogamesService) {       
     this.api.PopularFIlm().subscribe((data) => {
     console.log(data.results)
     this.FilmPopular=data.results
@@ -22,6 +24,11 @@ TVShowPopular!: Serie[];
    this.TVShowPopular=data.results
    console.log(this.TVShowPopular)
   })
+  this.apivideo.PopularVideoGames().subscribe((data)=>{
+    this.VideoGamesPopular=data.results
+    console.log(this.VideoGamesPopular);
+  })
+  
   
   }
       

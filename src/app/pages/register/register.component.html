@@ -1,1 +1,52 @@
-<p>register works!</p>
+<div class="registerComponent">
+  <div class="form-container">
+    <div class="header-form">
+      <a routerLink="/Login">Connexion</a>
+      <a routerLink="/Register">Création de compte</a>
+    </div>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="form">
+      <input
+        type="text"
+        class="register"
+        name="register"
+        placeholder="Pseudo"
+        formControlName="username"
+      />
+      <input
+        type="email"
+        class="email"
+        name="email"
+        placeholder="Email"
+        formControlName="email"
+      />
+      <input
+        type="password"
+        class="password"
+        name="register"
+        placeholder="Mot de passe"
+        formControlName="password"
+      />
+      <!-- <div class="btn-submit">
+        <h1 class="text-btn-submit">Création de compte</h1>
+        <div class="cercle">
+          <div class="arrow-icon">
+            <mat-icon
+              [inline]="true"
+              aria-hidden="false"
+              aria-label="Example arrow_forward icon"
+              >arrow_forward</mat-icon
+            >
+          </div>
+        </div>
+      </div>
+       -->
+      <div class="submit">
+        <button [disabled]="!registerForm.valid" type="submit">
+          Créer mon compte
+        </button>
+      </div>
+
+      <div class="connexion" routerLink="/Login">Connexion</div>
+    </form>
+  </div>
+</div>

@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -25,6 +25,10 @@ import { CommentsComponent } from './pages/comments/comments.component';
 import { TvshowComponent } from './pages/tvshow/tvshow.component';
 import { RatingsComponent } from './pages/ratings/ratings.component';
 import { ResultsComponent } from './components/results/results.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { BarRatingModule } from 'ngx-bar-rating';
+import { VideogamesComponent } from './pages/videogames/videogames.component';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -45,6 +49,7 @@ import { ResultsComponent } from './components/results/results.component';
     TvshowComponent,
     RatingsComponent,
     ResultsComponent,
+    VideogamesComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,8 +58,13 @@ import { ResultsComponent } from './components/results/results.component';
     MatIconModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
+    NgxPaginationModule,
+    BarRatingModule,
+    ReactiveFormsModule,
+
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

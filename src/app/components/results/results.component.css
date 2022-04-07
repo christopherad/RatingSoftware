@@ -12,8 +12,16 @@
   margin-bottom: 15px;
 }
 .textBox {
+  display: block;
+  width: 100%;
   padding: 20px 20px;
   margin-left: 15px;
+}
+.first-box {
+  display: flex;
+  justify-content: space-between;
+
+  align-items: center;
 }
 .image {
   width: 128px;
@@ -21,22 +29,32 @@
 }
 .imgBox {
   display: flex;
+  justify-content: flex-start;
   align-items: center;
 }
 .result {
-  display: flex;
+  /* display: flex;
   padding: 20px 30px;
   background-color: #363538;
   border-radius: 12px;
   margin-bottom: 30px;
-  min-height: 232px;
-
+  min-height: 232px; */
   /* overflow: hidden; */
+}
+.test {
+  display: flex;
+  padding: 20px 30px;
+
+  background-color: #363538;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  min-height: 232px;
 }
 .result .title {
   font-weight: bold;
   color: white;
   font-size: 28px;
+  margin: 0;
 }
 .result h2 {
   font-weight: 500;
@@ -47,4 +65,7 @@
   font-weight: 500;
   color: white;
   font-size: 18px;
+}
+pagination-controls {
+  text-align: center;
 }
