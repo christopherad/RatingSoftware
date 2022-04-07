@@ -12,7 +12,8 @@ export class ResultsComponent implements OnInit {
   resultsMovies: any[] = [];
   pageMovies = 1;
   total = 0;
-
+  mediaType = '';
+  link = '';
   constructor(
     private SearchService: SearchService,
     private route: ActivatedRoute
@@ -29,14 +30,13 @@ export class ResultsComponent implements OnInit {
         }
       );
     });
-    // this.SearchService.getResults(this.idResult).subscribe((data) => {
-    //   this.resultsMovies = data.results;
-    //   this.total = data.total_results;
-    //   console.log('recherche', this.idResult);
-    //   // this.page = data.page;
-    // });
 
     this.getMovies();
+    // if (this.mediaType === 'tv') {
+    //   this.link = 'Serie';
+    // } else if (this.mediaType === 'movie') {
+    //   this.link = 'Movie';
+    // }
   }
 
   getMovies() {

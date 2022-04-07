@@ -35,3 +35,16 @@ button {
   margin-top: 7%;
   /* margin: 40px 5% 0 5%; */
 }
+.media-type {
+  font-weight: 600;
+  white-space: nowrap;
+  vertical-align: middle;
+  padding-inline-start: 1.25rem;
+  padding-inline-end: 1.25rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+  border-radius: 0.175rem;
+  background: rgba(129, 230, 218, 0.16);
+  color: #81e6da;
+  /* font-size: 23px; */
+}

@@ -35,6 +35,7 @@ export class RegisterComponent implements OnInit {
   }
   onSubmit() {
     if (this.registerForm.invalid) {
+      // console.log('vous devez remplir tout les champs');
       return;
     }
     console.log(this.registerForm.value);
