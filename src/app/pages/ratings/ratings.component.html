@@ -1,3 +1,6 @@
+
+
+
 <div style="margin-left: 150px; margin-right: 150px">
   <h3 class="title is-3" style="color: white">Note</h3>
   <div
@@ -5,16 +8,6 @@
     style="background-color: #363538; text-align: center"
   >
     <div class="column is-6" style="border-right: 2px solid #81e6da">
-      <div style="margin-bottom: 10px">
-        <h4 style="color: white; margin-bottom: 10px">Appréciations sur 10</h4>
-        <input
-          max="10"
-          min="0"
-          class="input is-small is-hovered is-primary"
-          type="number"
-          placeholder="Tapez votre note ici"
-        />
-      </div>
       <div>
         <h4 style="color: white; margin-bottom: 10px">Comment tu te sens ?</h4>
         <div class="control">
@@ -40,6 +33,16 @@
             <img [src]="EmojiAmuse" />
           </label>
         </div>
+      </div>
+      <div style="margin-bottom: 10px">
+        <h4 style="color: white; margin-bottom: 10px">Un commentaire ou une critique?</h4>
+        <input
+          max="10"
+          min="0"
+          class="input is-small is-hovered is-primary"
+          type="number"
+          placeholder="Tapez ici"
+        />
       </div>
       <div style="margin-top: 10px">
         <h4 style="color: white; margin-bottom: 10px">Je recommande à ?</h4>
@@ -85,9 +88,10 @@
       </div>
     </div>
 
+
     <div class="column is-6">
       <div>
-        <h4 style="color: white; margin-bottom: 30px">Comment ça était ?</h4>
+        <h4 style="color: white; margin-bottom: 30px">Comment c'était ?</h4>
         <div class="columns" style="display: flex; margin-left: 10px">
           <div
             class="column is-9"
@@ -105,7 +109,7 @@
               [max]="5"
               [theme]="'movie'"
               [showText]="true"
-              [titles]="['', 'Mauvais', 'Ok', 'Bien', 'Genial', 'Wow']"
+              [titles]="['', 'Mauvais', 'Bof', 'Ok', 'Bien', 'Génial']"
             ></bar-rating>
           </div>
           <div class="column is-1" style="color: white; text-align: center">
@@ -129,7 +133,7 @@
               [max]="5"
               [theme]="'movie'"
               [showText]="true"
-              [titles]="['', 'Mauvais', 'Ok', 'Bien', 'Genial', 'Wow']"
+              [titles]="['', 'Mauvais', 'Bof', 'Ok', 'Bien', 'Génial']"
             ></bar-rating>
           </div>
           <div class="column is-1" style="color: white; text-align: center">
@@ -153,7 +157,7 @@
               [max]="5"
               [theme]="'movie'"
               [showText]="true"
-              [titles]="['', 'Mauvais', 'Ok', 'Bien', 'Genial', 'Wow']"
+              [titles]="['', 'Mauvais', 'Bof', 'Ok', 'Bien', 'Génial']"
             ></bar-rating>
           </div>
           <div class="column is-1" style="color: white; text-align: center">
@@ -180,7 +184,7 @@
               [max]="5"
               [theme]="'movie'"
               [showText]="true"
-              [titles]="['', 'Mauvais', 'Ok', 'Bien', 'Genial', 'Wow']"
+              [titles]="['', 'Mauvais', 'Bof', 'Ok', 'Bien', 'Génial']"
             ></bar-rating>
           </div>
           <div class="column is-1" style="color: white; text-align: center">
