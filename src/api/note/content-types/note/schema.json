@@ -4,30 +4,41 @@
   "info": {
     "singularName": "note",
     "pluralName": "notes",
-    "displayName": "Note"
+    "displayName": "Note",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "IdNote": {
-      "type": "uid"
-    },
-    "DateHeureNote": {
-      "type": "datetime"
-    },
-    "NomRessenti": {
+    "recommendation": {
       "type": "string"
     },
-    "PositionRessenti": {
-      "type": "string"
-    },
-    "NomRecommendation": {
-      "type": "string"
-    },
-    "Critique": {
+    "critique": {
       "type": "text"
+    },
+    "critere": {
+      "type": "json"
+    },
+    "note": {
+      "type": "integer"
+    },
+    "itemId": {
+      "type": "integer"
+    },
+    "userId": {
+      "type": "integer"
+    },
+    "ressenti": {
+      "type": "enumeration",
+      "enum": [
+        "Content",
+        "Ennuyé",
+        "Choqué",
+        "Triste",
+        "Amusé"
+      ]
     }
   }
 }
