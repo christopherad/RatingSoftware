@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import axios from 'axios';
 
 export interface User {
+  id:string;
   username?: string;
   email?: string;
   password?: string;

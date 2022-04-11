@@ -1,6 +1,7 @@
 import { Genre } from "./Genre";
 
 export interface Item {
+
   id: number;
   title: string;
   description : string;
@@ -13,5 +14,6 @@ export interface Item {
   background_image:string;
   rating:string;
   ratings_count:string
+  item:Array<Item>
   //
 }
