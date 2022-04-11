@@ -48,3 +48,82 @@ button {
   color: #81e6da;
   /* font-size: 23px; */
 }
+.genre {
+  font-weight: 600;
+  white-space: nowrap;
+  vertical-align: middle;
+  padding-inline-start: 1.25rem;
+  padding-inline-end: 1.25rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+  border-radius: 1.25rem;
+  background: RGB(251, 211, 140, 0.16);
+  color: #fbd38c;
+  /* font-size: 23px; */
+}
+.platform {
+  font-weight: 600;
+  white-space: nowrap;
+  vertical-align: middle;
+  padding-inline-start: 1.25rem;
+  padding-inline-end: 1.25rem;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  border-radius: 1.25rem;
+  background: rgba(0, 150, 136, 0.16);
+  color: #009688;
+  /* font-size: 23px; */
+}
+/* custom pagination */
+
+.ngx-pagination .current,
+.btn-info {
+  background: #67b8ae !important;
+  border: transparent !important;
+  border-radius: 20px !important;
+}
+.ngx-pagination .current:hover {
+  background: rgba(103, 184, 174, 0.75) !important;
+  border-radius: 20px !important;
+  border: transparent !important;
+}
+.ngx-pagination .disabled {
+  align-items: center !important;
+  padding: 0.1875rem 0.625rem !important;
+}
+.ngx-pagination .pagination-previous {
+  margin-right: 1.25rem !important;
+  border-radius: 1.25rem !important;
+  background-color: white !important;
+}
+.ngx-pagination .pagination-next {
+  display: inline-block !important;
+  align-items: center !important;
+  margin-left: 1.25rem !important;
+  border-radius: 1.25rem !important;
+  background-color: white !important;
+}
+.ngx-pagination .pagination-previous span,
+.ngx-pagination .pagination-next span {
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+.ngx-pagination .pagination-previous a,
+.ngx-pagination .pagination-next a {
+  display: inline;
+  text-align: center !important;
+  justify-content: center !important;
+  vertical-align: middle !important;
+}
+.ngx-pagination .pagination-previous a::before,
+.ngx-pagination .pagination-previous.disabled::before {
+  content: none !important;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+.ngx-pagination .pagination-next a::after,
+.ngx-pagination .pagination-next.disabled::after {
+  content: none !important;
+  display: inline-block;
+  margin-left: 0.5rem;
+}
