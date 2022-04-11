@@ -29,6 +29,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { BarRatingModule } from 'ngx-bar-rating';
 import { VideogamesComponent } from './pages/videogames/videogames.component';
 import { CookieService } from 'ngx-cookie-service';
+import { ImageUploadComponent } from './pages/profil/image-upload/image-upload.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { CookieService } from 'ngx-cookie-service';
     RatingsComponent,
     ResultsComponent,
     VideogamesComponent,
+    ImageUploadComponent,
   ],
   imports: [
     BrowserModule,
