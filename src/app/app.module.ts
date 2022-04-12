@@ -29,6 +29,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { BarRatingModule } from 'ngx-bar-rating';
 import { VideogamesComponent } from './pages/videogames/videogames.component';
 import { CookieService } from 'ngx-cookie-service';
+import { ForgotpasswordComponent } from './pages/forgotpassword/forgotpassword.component';
+import { ResetComponent } from './pages/reset/reset.component';
+
 
 @NgModule({
   declarations: [
@@ -50,6 +53,8 @@ import { CookieService } from 'ngx-cookie-service';
     RatingsComponent,
     ResultsComponent,
     VideogamesComponent,
+    ForgotpasswordComponent,
+    ResetComponent
   ],
   imports: [
     BrowserModule,

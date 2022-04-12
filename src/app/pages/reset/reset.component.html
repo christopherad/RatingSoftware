@@ -1,0 +1,29 @@
+<div class="registerComponent">
+    <ng-container *ngIf="isMessage==true">
+        <article class="message is-success">
+            <div class="message-header">
+                <p>Réinitialisation mot de passe</p>
+                <button class="delete" aria-label="delete"></button>
+            </div>
+            <div class="message-body">
+            Votre mot de passe a bien été réinitialisé. Vous allez être redirigé vers la page d'accueil dans 10 sec !
+            </div>
+        </article>
+    </ng-container>
+    <div class="form-container">
+        <div class="header-form">
+            <p>Réinitialiser mot de passe</p>
+        </div>
+        <form [formGroup]="ResetPasswordForm" (ngSubmit)="onSubmit()"  class="form">
+            <input type="password" class="password" name="password" placeholder="password" formControlName="password" />
+
+            <input type="password" class="password" name="confirmationpassword" placeholder="confirmation password" formControlName="confirmationpassword" />
+
+            <div class="submit">
+                <button  type="submit" [disabled]="!ResetPasswordForm.valid">
+                    Réinitialiser
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

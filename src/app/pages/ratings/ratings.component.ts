@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { NgxStarRatingModule } from 'ngx-star-rating';
 
 @Component({
   selector: 'app-ratings',
@@ -16,7 +16,7 @@ rate?:number
 rate2?:number
 rate3?:number
 rate4?:number
-  constructor() { 
+  constructor() {
 this.rate=1
 this.rate2=1
 this.rate3=1;
@@ -24,7 +24,7 @@ this.rate4=1;
   }
 
   ngOnInit(): void {
-    
+
   }
 
 }

@@ -39,3 +39,81 @@ h5{
     border-radius: 15px;
     padding-left: 25px;
 }
+.results {
+    margin: 48px 10%;
+    display: inline-block;
+    justify-content: center;
+}
+
+.total-result {
+    background-color: aqua;
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 130px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.textBox {
+    display: block;
+    width: 100%;
+    padding: 20px 20px;
+    margin-left: 15px;
+}
+
+.first-box {
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.image {
+    width: 128px;
+    height: auto;
+}
+
+.imgBox {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.result {
+    /* display: flex;
+  padding: 20px 30px;
+  background-color: #363538;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  min-height: 232px; */
+    /* overflow: hidden; */
+}
+
+.test {
+    display: flex;
+    padding: 20px 30px;
+
+    background-color: #363538;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    min-height: 232px;
+}
+
+.result .title {
+    font-weight: bold;
+    color: white;
+    font-size: 28px;
+    margin: 0;
+}
+
+.result h2 {
+    font-weight: 500;
+    color: white;
+    font-size: 20px;
+}
+
+.result p {
+    font-weight: 500;
+    color: white;
+    font-size: 18px;
+}
