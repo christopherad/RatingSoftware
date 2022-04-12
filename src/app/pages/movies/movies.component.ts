@@ -53,6 +53,7 @@ this.cookieValue = this.cookieService.get('user');
     // Handle success.
     this.user=response.data
     this.idutilisateur=this.user.id
+    console.log(this.idutilisateur)
   this.api.AfficherLesFilmsFavoris(this.idutilisateur).subscribe(data=>{
     this.ListFilm=data.items
     this.VerifierFavoris(this.ListFilm,this.Film.id)
