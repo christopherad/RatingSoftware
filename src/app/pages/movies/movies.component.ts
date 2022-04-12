@@ -27,23 +27,16 @@ Film!:Item
   isError:boolean=false;
 ListFilm!:any;
 isFavourite:boolean=false
-
-
+idfavoris!:string
 
   constructor(private route: ActivatedRoute,private api:MoviesServices ,private cookieService: CookieService) {
 this.idFilm=this.route.snapshot.paramMap.get('id')!
 this.cookieValue = this.cookieService.get('user');
    }
-   
-  
-   
-
   ngOnInit(): void {
     console.log(this.idFilm)
     this.api.GetDetailFilm(this.idFilm!).subscribe(data=>{
       this.Film=data;
-      console.log(this.Film)
-      console.log(this.hideNoteFilm)
  axios.get('http://51.158.72.178:1337/api/users/me ', {
     headers: {
       Authorization: `Bearer ${this.cookieValue}`,
@@ -53,12 +46,20 @@ this.cookieValue = this.cookieService.get('user');
     // Handle success.
     this.user=response.data
     this.idutilisateur=this.user.id
-    console.log(this.idutilisateur)
-  this.api.AfficherLesFilmsFavoris(this.idutilisateur).subscribe(data=>{
-    this.ListFilm=data.items
-    this.VerifierFavoris(this.ListFilm,this.Film.id)
+  axios 
+  .get(`http://51.158.72.178:1337/api/favoris/${this.idutilisateur}`, {
+    headers: {
+      Authorization: `Bearer ${this.cookieValue}`,
+    },
   })
-  
+  .then(response => {
+this.ListFilm=response.data.items
+
+this.VerifierFavoris(this.ListFilm,this.Film.id)
+  })
+  .catch(error => {
+    console.log('An error occurred:', error.response);
+  });  
   })
 
   .catch((error) => {
@@ -67,20 +68,22 @@ this.cookieValue = this.cookieService.get('user');
   });
 
     })
-    
   }
   AddFavoris(){
     console.log(this.idutilisateur)
-   console.log(this.Film)
+
    if(this.isFavourite==true){
-     this.isError=true
-     console.log(this.isError)
+    //Suppresion des Favoris
+    this.idfavoris=this.ListFilm[0].idFavorites
+    this.api.DeleteFavourite(this.idfavoris,this.cookieValue)
+    this.isError=true;
+    setTimeout(()=>{location.reload()},500)
    }
    else
    {
- this.api.AddFavourite(this.Film,this.idutilisateur)
+ this.api.AddFavourite(this.Film,this.idutilisateur,this.cookieValue)
     this.IsMessage=true;
-   location.reload()
+     setTimeout(()=>{location.reload()},500)
    }
    
 

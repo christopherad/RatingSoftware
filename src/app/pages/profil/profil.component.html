@@ -24,12 +24,9 @@
                 <ng-container *ngFor="let favoris of ListFavoris">
                     <ng-container *ngFor="let item of favoris.item">
             <div class="result column">
+              
                     <div class="test">
                             <a [routerLink]=" item.title!=null?(['/Movie',item.id]):(['/Serie',item.id])||item.background_image!==null?(['/Videogame',item.id]):(['/Home',item.id])"
-                            
-                       
-                     
-    
                             
                         >
                                         <div class="imgBox">

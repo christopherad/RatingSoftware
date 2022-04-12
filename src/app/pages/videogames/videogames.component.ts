@@ -25,6 +25,7 @@ isError:boolean=false;
   isFavourite:boolean=false
   ListeVideogames!:any;
  ImageNonFavori:any="../../assets/Images/nonFavori.png"
+  idfavoris: any;
 
   constructor(private route: ActivatedRoute,private api:VideogamesService,private cookieService: CookieService,private apimovies:MoviesServices) {this.idVideo=this.route.snapshot.paramMap.get('id')! 
   this.cookieValue = this.cookieService.get('user');
@@ -40,8 +41,7 @@ isError:boolean=false;
     }
     
     })
-   
-     
+
    })
 
   }
@@ -57,10 +57,19 @@ isError:boolean=false;
     // Handle success.
     this.user=response.data
     this.idutilisateur=this.user.id
-  this.apimovies.AfficherLesFilmsFavoris(this.idutilisateur).subscribe(data=>{
-    this.ListeVideogames=data.items
-     this.VerifierFavoris(this.ListeVideogames,this.Videogame.id)
+ axios 
+  .get(`http://51.158.72.178:1337/api/favoris/${this.idutilisateur}`, {
+    headers: {
+      Authorization: `Bearer ${this.cookieValue}`,
+    },
   })
+  .then(response => {
+this.ListeVideogames=response.data.items
+this.VerifierFavoris(this.ListeVideogames,this.Videogame.id)
+  })
+  .catch(error => {
+    console.log('An error occurred:', error.response);
+  });
   })
   .catch((error) => {
     console.log('An error occurred:', error.response);
@@ -77,14 +86,16 @@ isError:boolean=false;
     console.log(this.idutilisateur)
    console.log(this.Videogame)
    if(this.isFavourite==true){
-     this.isError=true
-     console.log(this.isError)
+   this.idfavoris=this.ListeVideogames[0].idFavorites
+    this.apimovies.DeleteFavourite(this.idfavoris,this.cookieValue)
+    this.isError=true;
+    setTimeout(()=>{location.reload()},500)
    }
    else
    {
- this.apimovies.AddFavourite(this.Videogame,this.idutilisateur)
+ this.apimovies.AddFavourite(this.Videogame,this.idutilisateur,this.cookieValue)
     this.IsMessage=true;
-
+setTimeout(()=>{location.reload()},500)
    }
    
 

@@ -28,6 +28,7 @@ ListSerie!:any;
 IsMessage:boolean=false
 isError:boolean=false;
  ImageNonFavori:any="../../assets/Images/nonFavori.png"
+  idfavoris: any;
 
 
   constructor(private route: ActivatedRoute,private api:MoviesServices,private cookieService: CookieService) {
@@ -66,11 +67,19 @@ isError:boolean=false;
     // Handle success.
     this.user=response.data
     this.idutilisateur=this.user.id
-  this.api.AfficherLesFilmsFavoris(this.idutilisateur).subscribe(data=>{
-    this.ListSerie=data.items
-     this.VerifierFavoris(this.ListSerie,this.Serie.id)
+   axios 
+  .get(`http://51.158.72.178:1337/api/favoris/${this.idutilisateur}`, {
+    headers: {
+      Authorization: `Bearer ${this.cookieValue}`,
+    },
   })
-  
+  .then(response => {
+this.ListSerie=response.data.items
+this.VerifierFavoris(this.ListSerie,this.Serie.id)
+  })
+  .catch(error => {
+    console.log('An error occurred:', error.response);
+  });
   })
 
   .catch((error) => {
@@ -84,14 +93,16 @@ isError:boolean=false;
     console.log(this.idutilisateur)
    console.log(this.Serie)
    if(this.isFavourite==true){
-     this.isError=true
-     console.log(this.isError)
+   this.idfavoris=this.ListSerie[0].idFavorites
+    this.api.DeleteFavourite(this.idfavoris,this.cookieValue)
+    this.isError=true;
+    setTimeout(()=>{location.reload()},500)
    }
    else
    {
- this.api.AddFavourite(this.Serie,this.idutilisateur)
+ this.api.AddFavourite(this.Serie,this.idutilisateur,this.cookieValue)
     this.IsMessage=true;
-   location.reload()
+   setTimeout(()=>{location.reload()},500)
    }
    
 

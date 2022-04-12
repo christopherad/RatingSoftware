@@ -41,32 +41,61 @@ export class MoviesServices {
     ///
     return this.http.get<any>(`https://api.themoviedb.org/3/tv/${idSerie}/credits?api_key=${API_KEY}&language=fr`)
   }
-  AddFavourite(item:Item,idutilisateur:string)
+
+  DeleteFavourite(idfavoris:string,cookie:string)
+  { axios 
+  .delete(`http://51.158.72.178:1337/api/favoris/${idfavoris}`, {
+    headers: {
+      Authorization: `Bearer ${cookie}`,
+    },
+  })
+  .then((response) => {
+    // Handle success.
+ 
+  })
+  .catch((error) => {
+    // Handle error.
+    console.log('An error occurred:', error.response);
+  });
+
+  }
+
+  AddFavourite(item:Item,idutilisateur:string, token:string)
   {
 axios
   .post('http://51.158.72.178:1337/api/favoris/add', {
-    userId: idutilisateur,
+     
+      userId: idutilisateur,
     itemId: item.id,
     description: item.description,
+    categorie: null,
     poster_path: item.poster_path,
     overview: item.overview,
     vote_average: item.vote_average,
     vote_count: item.vote_count,
     name: item.name,
     genres: item.genres,
-    title:item.title //format JSON
+  },{
+    headers: {
+      'Authorization': `Bearer ${token}`,
+            'Accept': 'application/json',
+      'Content-Type': 'application/json',
+    
+    },
+   
+ //format JSON, “name”
   })
+  
   .then(response => {
     console.log("Item has been added to your favorites.");
-    console.log(response)
   })
   .catch(error => {
     console.log('An error occurred:', error.response);
   });
 
   }
-  AfficherLesFilmsFavoris(idutilisateur:string){
+  AfficherLesFilmsFavoris(idutilisateur:string,token:string){
     
-    return this.http.get<any>(`http://51.158.72.178:1337/api/favoris/${idutilisateur}`)
+
 }
 }
