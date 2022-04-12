@@ -29,11 +29,13 @@ button {
   border-radius: 50px;
   font-size: 23px;
 }
+button:hover {
+  background-color: #34d9c6;
+}
 
 .submit {
   text-align: center;
   margin-top: 7%;
-  /* margin: 40px 5% 0 5%; */
 }
 .media-type {
   font-weight: 600;
@@ -73,6 +75,23 @@ button {
   background: rgba(0, 150, 136, 0.16);
   color: #009688;
   /* font-size: 23px; */
+}
+.note {
+  margin-left: 20px;
+  margin-top: 20px;
+  font-weight: 500;
+  white-space: nowrap;
+  vertical-align: middle;
+  padding-inline-start: 1.75rem;
+  padding-inline-end: 1.75rem;
+  text-transform: uppercase;
+  background: none;
+  font-size: 1.25rem;
+  border-radius: 1.25rem;
+  border-style: solid;
+  border-color: rgba(130, 231, 217, 1);
+  color: black;
+  background: rgba(130, 231, 217, 0.8);
 }
 /* custom pagination */
 
