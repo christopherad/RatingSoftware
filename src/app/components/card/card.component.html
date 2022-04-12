@@ -1,1 +1,50 @@
-<p>card works!</p>
+<!-- portotype card -->
+<div class="container">
+  <ng-container *ngFor="let item of FilmPopular; let i = index">
+    <li *ngIf="i < 3" class="dropdown-item">
+      <div class="card">
+        <div class="card-image">
+          <div class="heart-icon" (click)="isClicked = !isClicked">
+            <!-- icon favorite à modifier pour la suite -->
+            <mat-icon
+              class="favorite-icon"
+              [class.favorite-iconClicked]="isClicked"
+              aria-hidden="false"
+            >
+              favorite</mat-icon
+            >
+          </div>
+          <!-- note à mettre ici -->
+          <div class="note">10/10</div>
+
+          <img
+            src="https://image.tmdb.org/t/p/w300//{{ item.poster_path }}"
+            alt="Placeholder image"
+          />
+        </div>
+        <div class="card-content">
+          <div class="media">
+            <div class="media-content">
+              <p class="title is-4">{{ item.title }}</p>
+              <!-- date à mettre ici -->
+              <p class="subtitle is-6">09/09/1999</p>
+            </div>
+          </div>
+          <div>
+            <button class="detail" routerLink="/Movie/{{ item.id }}">
+              <div class="title-button is-4">Voir en détails</div>
+              <div class="iconArrow">
+                <mat-icon
+                  [inline]="true"
+                  aria-hidden="false"
+                  aria-label="Example arrow icon"
+                  >navigate_next</mat-icon
+                >
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ng-container>
+</div>
