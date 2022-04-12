@@ -1,0 +1,83 @@
+.container {
+  display: grid;
+  justify-content: center;
+  margin: 7% auto;
+  grid-template-columns: repeat(auto-fill, minmax(363px, 1fr));
+  grid-gap: 0.5em;
+}
+.title {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 25px;
+}
+.title,
+.subtitle,
+.content {
+  color: white;
+}
+.subtitle {
+  margin-top: -0.25rem !important;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  background-color: #363538;
+  max-width: 363px !important;
+  height: 730px !important;
+  border-radius: 12px !important;
+}
+img {
+  width: 363px;
+  height: 500px;
+  border-radius: 12px 12px 0 0 !important;
+  object-fit: cover;
+}
+.title-button {
+  color: black;
+}
+.detail {
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  padding: 6px 15px;
+}
+.iconArrow {
+  height: 50px;
+  line-height: 50px;
+  vertical-align: middle;
+  font-size: 40px;
+}
+.image,
+.card-image {
+  position: relative;
+}
+.heart-icon {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 15px;
+  margin-top: 15px;
+  padding: 15px 15px;
+  background-color: rgba(207, 217, 223, 0.5);
+  border-radius: 12px;
+}
+
+.favorite-icon:hover {
+  transform: scale(1.1);
+}
+.favorite-icon {
+  color: #ffffff;
+}
+.favorite-iconClicked {
+  color: red;
+}
+
+.note {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

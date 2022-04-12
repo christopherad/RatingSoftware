@@ -6,8 +6,46 @@
       <h1><b>Films du moment</b></h1>
     </font>
   </div>
-
-  <section class="section">
+  <!-- favoris film -->
+  <!-- <app-card></app-card> -->
+  <!-- Popular Films card -->
+  <div class="container">
+    <ng-container *ngFor="let item of FilmPopular; let i = index">
+      <li *ngIf="i < 4" class="dropdown-item">
+        <div class="card">
+          <div class="card-image">
+            <img
+              src="https://image.tmdb.org/t/p/w300//{{ item.poster_path }}"
+              alt="Placeholder image"
+            />
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <p class="title is-4">{{ item.title }}</p>
+                <p class="subtitle is-6">Valeur à mettre ici</p>
+              </div>
+            </div>
+            <div>
+              <button class="detail" routerLink="/Movie/{{ item.id }}">
+                <div class="title-button is-4">Plus de détails</div>
+                <div class="iconArrow">
+                  <mat-icon
+                    [inline]="true"
+                    aria-hidden="false"
+                    aria-label="Example arrow icon"
+                    >navigate_next</mat-icon
+                  >
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ng-container>
+  </div>
+  <!-- ancien film populaire -->
+  <!-- <section class="section">
     <div class="container">
       <ng-container *ngFor="let item of FilmPopular; let i = index">
         <a routerLink="/Movie/{{ item.id }}">
@@ -38,22 +76,58 @@
               </footer>
             </div>
 
-            {{ item.id }}
           </li>
         </a>
       </ng-container>
     </div>
-  </section>
+  </section> -->
 
   <div class="div-1">
     <font size="6pt">
       <h1><b>Séries du moment</b></h1>
     </font>
   </div>
+  <!-- serie du moment -->
+  <div class="container">
+    <ng-container *ngFor="let item of TVShowPopular; let i = index">
+      <li *ngIf="i < 4" class="dropdown-item">
+        <div class="card">
+          <div class="card-image">
+            <img
+              src="https://image.tmdb.org/t/p/w300//{{ item.poster_path }}"
+              alt="Placeholder image"
+            />
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <p class="title is-4">{{ item.name }}</p>
+                <p class="subtitle is-6">Valeur à mettre ici</p>
+              </div>
+            </div>
+            <div>
+              <button class="detail" routerLink="/Serie/{{ item.id }}">
+                <div class="title-button is-4">Plus de détails</div>
+                <div class="iconArrow">
+                  <mat-icon
+                    [inline]="true"
+                    aria-hidden="false"
+                    aria-label="Example arrow icon"
+                    >navigate_next</mat-icon
+                  >
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ng-container>
+  </div>
+  <!-- ancien tv shows populaire -->
 
-  <section class="section">
+  <!-- <section class="section">
     <div class="container">
-      <!-- 	Card 1	 -->
+  
       <ng-container *ngFor="let item of TVShowPopular; let i = index">
         <a routerLink="/Serie/{{ item.id }}">
           <li *ngIf="i < 5" class="dropdown-item">
@@ -89,22 +163,61 @@
         </a>
       </ng-container>
     </div>
-  </section>
+  </section> -->
   <div class="div-1">
     <font size="6pt">
       <h1><b>Jeux Videos du moment</b></h1>
     </font>
   </div>
-  <section class="section">
+  <!-- jeux populaire -->
+  <div class="container">
+    <ng-container *ngFor="let item of VideoGamesPopular; let i = index">
+      <li *ngIf="i < 4" class="dropdown-item">
+        <div class="card">
+          <div class="card-image">
+            <img src="{{ item.background_image }}" alt="Placeholder image" />
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <p class="title is-4">{{ item.name }}</p>
+                <p class="subtitle is-6">Valeur à mettre ici</p>
+              </div>
+            </div>
+            <div>
+              <button class="detail" routerLink="/Videogame/{{ item.id }}">
+                <div class="title-button is-4">Plus de détails</div>
+                <div class="iconArrow">
+                  <mat-icon
+                    [inline]="true"
+                    aria-hidden="false"
+                    aria-label="Example arrow icon"
+                    >navigate_next</mat-icon
+                  >
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ng-container>
+  </div>
+  <!-- ancien jeux populaire -->
+  <!-- <section class="section">
     <div class="container">
-      <!-- 	Card 1	 -->
+      
       <ng-container *ngFor="let item of VideoGamesPopular; let i = index">
         <a routerLink="/Videogame/{{ item.id }}">
           <li *ngIf="i < 5" class="dropdown-item">
             <div class="card">
               <div class="card-image">
                 <figure class="image-card">
-                  <a><img src={{item.background_image}} alt="Rectangle-23" border="0" /></a>
+                  <a
+                    ><img
+                      src="{{ item.background_image }}"
+                      alt="Rectangle-23"
+                      border="0"
+                  /></a>
                 </figure>
               </div>
               <div class="card-content">
@@ -113,9 +226,8 @@
                     <b>{{ item.name }}</b>
                   </p>
                 </div>
-              
               </div>
-  
+
               <footer class="card-footer">
                 <a href="#" class="card-footer-item">Plus de détails</a>
               </footer>
@@ -124,8 +236,7 @@
         </a>
       </ng-container>
     </div>
-  </section>
-  
+  </section> -->
 </body>
 
 <p></p>
