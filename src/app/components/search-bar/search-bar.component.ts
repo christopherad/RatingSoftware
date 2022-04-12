@@ -21,7 +21,7 @@ export class SearchBarComponent implements OnInit {
   ngOnInit(): void {}
   searchWeb(): void {
     if (this.searchTerm === '') return;
-    console.log('recherche', this.searchTerm);
+    // recherche de films et series
     this.searchService.getResults(this.searchTerm, this.pageMovies).subscribe(
       (response: any) => {
         this.searchService.passResults({
@@ -34,13 +34,20 @@ export class SearchBarComponent implements OnInit {
         console.log('Error Occured', error);
       }
     );
+    // recherche de jeux
+    this.searchService.getGame(this.searchTerm).subscribe(
+      (response: any) => {
+        this.searchService.passResultsGames({
+          gameResults: response.results,
+          page: response.page,
+        });
+      },
+      (error: any) => {
+        console.log('Error Occured', error);
+      }
+    );
   }
   onKeyEnterEvent(event: any) {
-    // if (this.searchTerm == '') {
-    //   this.router.navigate(['/Search/'], {
-    //     relativeTo: this.route,
-    //   });
-    // }
     this.router.navigate(['/Search/' + this.searchTerm], {
       relativeTo: this.route,
     });

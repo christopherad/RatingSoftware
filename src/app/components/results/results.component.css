@@ -17,10 +17,13 @@
   padding: 20px 20px;
   margin-left: 15px;
 }
+.textBox h2 {
+  margin-bottom: 10px;
+}
 .first-box {
   display: flex;
   justify-content: space-between;
-
+  margin-bottom: 15px;
   align-items: center;
 }
 .image {
@@ -32,19 +35,10 @@
   justify-content: flex-start;
   align-items: center;
 }
-.result {
-  /* display: flex;
-  padding: 20px 30px;
-  background-color: #363538;
-  border-radius: 12px;
-  margin-bottom: 30px;
-  min-height: 232px; */
-  /* overflow: hidden; */
-}
+
 .test {
   display: flex;
   padding: 20px 30px;
-
   background-color: #363538;
   border-radius: 12px;
   margin-bottom: 30px;
@@ -66,6 +60,15 @@
   color: white;
   font-size: 18px;
 }
+.columnGenres {
+  display: inline-block;
+  padding: 0.5rem;
+}
+.columnPlatform {
+  display: inline-block;
+  padding: 0.5rem;
+}
+
 pagination-controls {
   text-align: center;
 }

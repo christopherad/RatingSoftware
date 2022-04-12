@@ -1,5 +1,8 @@
 <div class="results">
-  <div class="total-result">{{ total }} Résultats</div>
+  <div class="total-result">
+    {{ resultsMovies.length + gameResults.length }} Résultats
+  </div>
+
   <div
     class="result column"
     *ngFor="
@@ -20,10 +23,10 @@
         <figure class="image">
           <a
             ><img
-              src="https://image.tmdb.org/t/p/w300//{{ result?.poster_path }}"
+              onerror="this.src='../../assets/img-not-found.png';"
+              src="{{ movieImage + result?.poster_path || blankImage }} "
               alt="Rectangle-23"
           /></a>
-          <!-- <figure class="image"></figure> -->
         </figure>
       </div>
 
@@ -32,7 +35,9 @@
           <h1 class="title">
             {{ result?.title || result?.name }}
           </h1>
-          <div class="media-type">{{ result?.media_type }}</div>
+          <div class="media-type">
+            {{ result?.media_type }}
+          </div>
         </div>
 
         <h2>
@@ -44,9 +49,50 @@
       </div>
     </div>
   </div>
-  <!-- <div class="imgBox">image en attente</div> -->
+
+  <div
+    class="result column"
+    *ngFor="
+      let result of gameResults
+        | paginate: { itemsPerPage: 5, currentPage: pageGame }
+    "
+    [routerLink]="['/Videogame/', result?.id]"
+  >
+    <div class="test">
+      <div class="imgBox">
+        <figure class="image">
+          <a
+            ><img src="{{ result?.background_image }} " alt="Rectangle-23"
+          /></a>
+          <!-- <figure class="image"></figure> -->
+        </figure>
+      </div>
+
+      <div class="textBox">
+        <div class="first-box">
+          <h1 class="title">
+            {{ result?.name }}
+          </h1>
+          <div class="media-type">Game</div>
+        </div>
+
+        <h2>
+          {{ result?.released }}
+        </h2>
+        <p>Genre(s)</p>
+
+        <div class="columnGenres" *ngFor="let genre of result.genres">
+          <div class="genre">{{ genre.name }}</div>
+        </div>
+        <p>Platforme(s)</p>
+        <div class="columnPlatform" *ngFor="let platform of result.platforms">
+          <div class="platform">{{ platform.platform.name }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <pagination-controls
-    (pageChange)="pageMovies = $event; getMovies()"
+    (pageChange)="pageMovies = pageGame = $event; getMovies()"
   ></pagination-controls>
 </div>

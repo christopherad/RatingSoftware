@@ -8,12 +8,17 @@ import { SearchService } from 'src/app/services/search.service';
   styleUrls: ['./results.component.css'],
 })
 export class ResultsComponent implements OnInit {
+  movieImage: any = 'https://image.tmdb.org/t/p/w300//';
+  blankImage: any = '../../assets/img-not-found.png';
   idResult = '';
+  idResultGame = '';
   resultsMovies: any[] = [];
+  gameResults: any[] = [];
+  totalResults = 0;
   pageMovies = 1;
-  total = 0;
-  mediaType = '';
-  link = '';
+  pageGame = 1;
+  // combinedArray: { resultsMovie: any; gameResults: any }[] = [];
+
   constructor(
     private SearchService: SearchService,
     private route: ActivatedRoute
@@ -24,28 +29,41 @@ export class ResultsComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.idResult = params['id'];
+      this.idResultGame = params['id'];
       this.SearchService.getResults(this.idResult, this.pageMovies).subscribe(
         (response: any) => {
           this.resultsMovies = response.results;
+          //this.totalResults = response.total;
+        }
+      );
+      this.SearchService.getGame(this.idResultGame).subscribe(
+        (response: any) => {
+          this.gameResults = response.results;
         }
       );
     });
 
     this.getMovies();
-    // if (this.mediaType === 'tv') {
-    //   this.link = 'Serie';
-    // } else if (this.mediaType === 'movie') {
-    //   this.link = 'Movie';
-    // }
   }
 
   getMovies() {
     this.SearchService.getPassedResults().subscribe(
       (response: any) => {
         this.resultsMovies = response.resultsMovies;
-        this.total = response.total;
+        this.totalResults = response.total;
         this.pageMovies = response.page;
-        console.log('recherche', this.idResult);
+        console.log('movie', this.resultsMovies);
+        console.log('total', this.totalResults);
+      },
+      (error: any) => {
+        console.log('error Occured', error);
+      }
+    );
+    this.SearchService.getPassedResultsGames().subscribe(
+      (response: any) => {
+        this.gameResults = response.gameResults;
+        this.pageGame = response.page;
+        console.log('game', this.gameResults);
       },
       (error: any) => {
         console.log('error Occured', error);
