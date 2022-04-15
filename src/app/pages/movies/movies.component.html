@@ -49,80 +49,19 @@
           >
             <button class="addFolder button">+ Ajouter à un dossier</button>
 
-    </ng-container>
-<div class="card columns "style="margin:30px;background-color: #363538;margin-left:150px;margin-right:150px;" >
-    
-    <div class="card-image ">
-        <figure class="image ">
-            <img style="width:90%;"  alt="Placeholder image" src="https://image.tmdb.org/t/p/w300//{{Film.poster_path}}">
-        </figure>
-    </div>
-    <div class="column is-8"    >
-        <div class="is-flex-direction-row" style="margin-left: 30px;">
-            <div class="columns">
-                    <div class="column  is-align-items-flex-start is-justify-content-flex-start">
-                        <h2 class="title is-2" style="color: white;">{{Film.title}}</h2>
-                    </div>
-                    <div class="column  is-align-items-flex-end is-justify-content-flex-end" style="display:flex;">
-                        <button class="button" style="background-color: #81E6DA;">+ Ajouter à un dossier</button>
-                        <button class="button is-ghost" (disabled)="isFavourite==true" (click)="AddFavoris()">
-                            <ng-container *ngIf="isFavourite==true"><img [src]="ImageFavori"></ng-container>
-                            <ng-container *ngIf="isFavourite==false"><img [src]="ImageNonFavori"></ng-container>
-                        </button>
-                    </div>       
-            </div>
-            </div>
-            <div class="is-flex-direction-row" style="margin-left: 30px;">
-            <ng-container *ngFor="let genre of Film.genres let i=index">
-                <span class="tag is-info" style="  margin-right: 5px;">{{genre.name}}</span>
-            </ng-container>
-            </div>
-            <div class="is-flex-direction-row" style="margin-left: 30px; margin-top: 20px;">
-                <h4 class="title is-4" style="color: white;">Synopsis</h4>
-            </div>
-            <div class="is-flex-direction-row" style="margin-left: 30px; margin-top: 20px;">
-                <p style="color: white;">{{Film.overview}}</p>
-            </div>
-            <div class="is-flex-direction-row" style="margin-left: 30px; margin-top: 20px;">
-                <div class="columns">
-                    <div class="column" style="border-right: 2px solid #81E6DA;">
-                        <h4 class="title is-4" style="color: white;">Note</h4></div>
-                
-                <div class="column">
-                    <h4 class="title is-4" style="color: white;">Note Générale du Site</h4>
-                </div>  
-            </div>
-            </div>
-            <div class="is-flex-direction-row" style="margin-left: 30px;">
-                <div class="columns">
-                    <div class="column" style="border-right: 2px solid #81E6DA;">
-                        <button class="button is-outlined"
-                            style="border: 3px solid #81E6DA;border-radius: 5px; background-color:#363538; color:white"><img [src]="ImageFavori"
-                                style="width: 50%;" />{{Film.vote_count}}</button>
-                        <button class="button is-outlined"
-                            style="border: 3px solid #81E6DA;border-radius: 5px; background-color:#363538; color:white; margin-left: 10px;">{{Film.vote_average}}/10</button>
-                    </div>
-                    <div class="column">
-                        <ng-container *ngIf="NoteGeneral!==null">
-                                <button class="button is-outlined"
-                                    style="border: 3px solid #81E6DA;border-radius: 5px; background-color:#363538; color:white; margin-left: 10px;">{{NoteGeneral+"
-                                    /5"}}</button>
-
-                        </ng-container>
-                            
-                            <button class="button is-outlined" (click)="this.hideNoteFilm=!this.hideNoteFilm"
-                                style="border-radius: 5px; background-color:#81E6DA; color:black; margin-left: 20px;">Modifier / Detailler</button>
-                            </div>
-
-                </div>
-       
-            </div>
-       
-        
-        
-        <div>
-           
-        
+            <button
+              class="button is-ghost"
+              (disabled)="(isFavourite == true)"
+              (click)="AddFavoris()"
+            >
+              <ng-container *ngIf="isFavourite == true"
+                ><img [src]="ImageFavori"
+              /></ng-container>
+              <ng-container *ngIf="isFavourite == false"
+                ><img [src]="ImageNonFavori"
+              /></ng-container>
+            </button>
+          </div>
         </div>
       </div>
       <div class="genres is-flex-direction-row">
@@ -142,7 +81,7 @@
       <div class="is-flex-direction-row" style="margin-top: 20px">
         <div class="columns">
           <div class="column">
-            <h4 class="title is-4" style="color: white">Note</h4>
+            <h4 class="title is-4" style="color: white">Note </h4>
             <div class="rates column">
               <div class="boxRate">
                 <button
@@ -182,7 +121,7 @@
           </div>
 
           <div class="column">
-            <h4 class="title is-4" style="color: white">Ma Note</h4>
+            <h4 class="title is-4" style="color: white">Note Générale du Site</h4>
             <div class="myRate column">
               <button
                 class="boxRate button"
@@ -193,7 +132,7 @@
                   color: white;
                 "
               >
-                8.6/10
+                {{NoteGeneral +"/ 5 "}}
               </button>
               <button
                 class="editRate boxRate button is-outlined"
@@ -208,12 +147,9 @@
 
       <div></div>
     </div>
-    
-</div>
-<app-ratings [hidden]="hideNoteFilm" ></app-ratings>
- <app-casting [hidden]="!hideNoteFilm"></app-casting>
-
-<app-comments [hidden]="!hideNoteFilm"></app-comments>
+  </div>
+  <app-ratings [hidden]="hideNoteFilm"></app-ratings>
+  <app-casting [hidden]="!hideNoteFilm"></app-casting>
 
   <app-comments [hidden]="!hideNoteFilm"></app-comments>
 </div>
