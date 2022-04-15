@@ -20,14 +20,14 @@
     <div class="row mt-3">
         <div class="px-4 py-3">
             <h5 class="mb-0" style="background-color: white;">Favoris</h5>
-            <div class="p-4 rounded shadow-sm results">
+            <div class="rounded shadow-sm results">
                 <ng-container *ngFor="let favoris of ListFavoris">
                     <ng-container *ngFor="let item of favoris.item">
             <div class="result column">
+              
                     <div class="test">
-                            <a [routerLink]=" item.title!=null
-                            ?['/Movie/', item?.id]
-                            : ['/Serie/', item?.id]"
+                            <a [routerLink]=" item.title!=null?(['/Movie',item.id]):(['/Serie',item.id])||item.background_image!==null?(['/Videogame',item.id]):(['/Home',item.id])"
+                            
                         >
                                         <div class="imgBox">
                                             <figure class="image">

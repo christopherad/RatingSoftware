@@ -12,7 +12,7 @@ import { Item } from 'src/app/models/Item';
   styleUrls: ['./profil.component.css']
 })
 export class ProfilComponent implements OnInit {
-    cookieValue?:string
+    cookieValue!:string
 
   photoProfil:any = "../assets/Unsplash-Avatars_0003s_0012_alex-lacayo-hchKfNuAblU-unsplash.png"
     inconnu:any = "../assets/Images/inconnu.png"
@@ -37,20 +37,32 @@ this.cookieValue = this.cookieService.get('user');
     // Handle success.
     this.user=response.data
     console.log('Data: ', this.user);
-   this.api.AfficherLesFilmsFavoris(this.user.id).subscribe(data=>{
-     this.ListFavoris=data.items
-     console.log(this.ListFavoris)
-   })
+      axios 
+  .get(`http://51.158.72.178:1337/api/favoris/${this.user.id}`, {
+    headers: {
+      Authorization: `Bearer ${this.cookieValue}`,
+    },
   })
+  .then(response => {
+this.ListFavoris=response.data.items
+  })
+  .catch(error => {
+    console.log('An error occurred:', error.response);
+  });  
+  })
+   
+  
   .catch((error) => {
     // Handle error.
     console.log('An error occurred:', error.response);
   });
-  
+}}
 
   
 
+  
 
-  }
 
-}
+  
+
+

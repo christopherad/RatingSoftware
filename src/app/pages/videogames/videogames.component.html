@@ -1,4 +1,27 @@
 <div>
+    <ng-container *ngIf="IsMessage==true">
+        <article class="message is-success">
+            <div class="message-header">
+                <p>Jeu-video Ajouté</p>
+                <button class="delete" aria-label="delete" (click)="OnClick()"></button>
+            </div>
+            <div class="message-body">
+                Le Jeux-video {{Videogame.name}} a été ajouté a votre liste de favoris
+            </div>
+        </article>
+    </ng-container>
+    <ng-container *ngIf="isError==true">
+        <article class="message is-danger">
+            <div class="message-header">
+                <p>Jeux-videos supprimer</p>
+                <button class="delete" aria-label="delete" (click)="OnClickError()"></button>
+            </div>
+            <div class="message-body">
+                Le jeu-video {{Videogame.name}} est supprimer de votre liste de favoris
+            </div>
+        </article>
+    
+    </ng-container>
     <div class="card columns " style="margin:30px;background-color: #363538;margin-left:150px;margin-right:150px;">
 
         <div class="card-image ">
@@ -15,7 +38,10 @@
                     </div>
                     <div class="column  is-align-items-flex-end is-justify-content-flex-end" style="display:flex;">
                         <button class="button" style="background-color: #81E6DA;">+ Ajouter à un dossier</button>
-                        <button class="button is-ghost"><img [src]="ImageFavori"></button>
+                        <button class="button is-ghost" (disabled)="isFavourite==true" (click)="AddFavoris()">
+                            <ng-container *ngIf="isFavourite==true"><img [src]="ImageFavori"></ng-container>
+                            <ng-container *ngIf="isFavourite==false"><img [src]="ImageNonFavori"></ng-container>
+                        </button>
                     </div>
                 </div>
             </div>
