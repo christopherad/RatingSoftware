@@ -16,7 +16,7 @@ export class TvshowComponent implements OnInit {
    ImageFilm:any="../../assets/Images/Joker.jpg";
  ImageFavori:any="../../assets/Images/coeur.png";
 
-
+ hideNoteFilm=true;
 idSerie?:string|undefined
 Serie!:Item
 isSerie=true
@@ -29,6 +29,7 @@ IsMessage:boolean=false
 isError:boolean=false;
  ImageNonFavori:any="../../assets/Images/nonFavori.png"
   idfavoris: any;
+  NoteGeneral: string="0"
 
 
   constructor(private route: ActivatedRoute,private api:MoviesServices,private cookieService: CookieService) {
@@ -67,6 +68,29 @@ isError:boolean=false;
     // Handle success.
     this.user=response.data
     this.idutilisateur=this.user.id
+
+///Fonction Afficher Note
+axios
+  .get(`http://51.158.72.178:1337/api/notes/${this.idSerie}`, {
+    headers: {
+      Authorization: `Bearer ${this.cookieValue}`,
+    },
+  })
+  .then(response => {
+     let test:number
+   test= response.data.note
+  
+  this.NoteGeneral=test.toFixed(2)
+ 
+  
+   
+  })
+  .catch(error => {
+    console.log('An error occurred:', error.response);
+  });
+
+
+    //Favoris 
    axios 
   .get(`http://51.158.72.178:1337/api/favoris/${this.idutilisateur}`, {
     headers: {

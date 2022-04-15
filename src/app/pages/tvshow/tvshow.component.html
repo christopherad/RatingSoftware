@@ -63,7 +63,7 @@
                     </div>
 
                     <div class="column">
-                        <h4 class="title is-4" style="color: white;">Ma Note</h4>
+                        <h4 class="title is-4" style="color: white;">Note Générale du Site</h4>
                     </div>
                 </div>
             </div>
@@ -77,10 +77,12 @@
                             style="border: 3px solid #81E6DA;border-radius: 5px; background-color:#363538; color:white; margin-left: 10px;">{{Serie.vote_average}}/10</button>
                     </div>
                     <div class="column">
+                        <ng-container *ngIf='NoteGeneral!=="0"'>
                         <button class="button is-outlined"
-                            style="border: 3px solid #81E6DA;border-radius: 5px; background-color:#363538; color:white; margin-left: 10px;">8.6/10</button>
-                        <button class="button is-outlined"
-                            style="border-radius: 5px; background-color:#81E6DA; color:black; margin-left: 20px;">Modifier
+                            style="border: 3px solid #81E6DA;border-radius: 5px; background-color:#363538; color:white; margin-left: 10px;">{{NoteGeneral+" /5"}}</button>
+                    </ng-container>
+                            <button class="button is-outlined"
+                            style="border-radius: 5px; background-color:#81E6DA; color:black; margin-left: 20px;" (click)="this.hideNoteFilm=!this.hideNoteFilm">Modifier
                             / Detailler</button>
                     </div>
 
@@ -97,6 +99,7 @@
         </div>
 
     </div>
-    <app-casting [isSerie]="isSerie"> </app-casting>
-    <app-comments></app-comments>
+    <app-casting [isSerie]="isSerie" [hidden]="!hideNoteFilm"> </app-casting>
+    <app-ratings [hidden]="hideNoteFilm"></app-ratings>
+    <app-comments [hidden]="!hideNoteFilm"></app-comments>
 </div>

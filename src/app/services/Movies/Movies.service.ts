@@ -98,4 +98,16 @@ axios
     
 
 }
+  async AddRatings(idutilisateur:string,itemid:string,ListeCritiere:Object[],recommendation:string,critique:string,ressenti:string,token:string){
+ const json = JSON.stringify({ data:{userId: idutilisateur,itemId:itemid,recommendation:recommendation,critique:critique,critere:ListeCritiere,ressenti:ressenti }});
+const res = await axios.post('http://51.158.72.178:1337/api/notes', json, {
+  headers: {
+    'Content-Type': 'application/json',
+     'Authorization': `Bearer ${token}`,
+           'Accept': 'application/json',
+
+  }
+});
+console.log(res.data.data); // '{"name":"deven"}'
+}
 }

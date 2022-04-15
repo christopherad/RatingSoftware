@@ -77,10 +77,12 @@
                             style="border: 3px solid #81E6DA;border-radius: 5px; background-color:#363538; color:white; margin-left: 10px;">{{Videogame.rating}}/5</button>
                     </div>
                     <div class="column">
+                        <ng-container *ngIf='NoteGeneral!=="0"'>
                         <button class="button is-outlined"
-                            style="border: 3px solid #81E6DA;border-radius: 5px; background-color:#363538; color:white; margin-left: 10px;">8.6/10</button>
-                        <button class="button is-outlined"
-                            style="border-radius: 5px; background-color:#81E6DA; color:black; margin-left: 20px;">Modifier
+                            style="border: 3px solid #81E6DA;border-radius: 5px; background-color:#363538; color:white; margin-left: 10px;">{{NoteGeneral+" /5"}}</button>
+                    </ng-container>
+                            <button class="button is-outlined"
+                            style="border-radius: 5px; background-color:#81E6DA; color:black; margin-left: 20px;" (click)="this.hideNoteFilm=!this.hideNoteFilm">Modifier
                             / Detailler</button>
                     </div>
 
@@ -97,4 +99,5 @@
         </div>
 
     </div>
+    <app-ratings [hidden]="hideNoteFilm"></app-ratings>
     <app-comments></app-comments>

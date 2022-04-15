@@ -61,7 +61,7 @@
                         <h4 class="title is-4" style="color: white;">Note</h4></div>
                 
                 <div class="column">
-                    <h4 class="title is-4" style="color: white;">Ma Note</h4>
+                    <h4 class="title is-4" style="color: white;">Note Générale du Site</h4>
                 </div>  
             </div>
             </div>
@@ -75,8 +75,13 @@
                             style="border: 3px solid #81E6DA;border-radius: 5px; background-color:#363538; color:white; margin-left: 10px;">{{Film.vote_average}}/10</button>
                     </div>
                     <div class="column">
-                            <button class="button is-outlined"
-                                style="border: 3px solid #81E6DA;border-radius: 5px; background-color:#363538; color:white; margin-left: 10px;">8.6/10</button>
+                        <ng-container *ngIf="NoteGeneral!==null">
+                                <button class="button is-outlined"
+                                    style="border: 3px solid #81E6DA;border-radius: 5px; background-color:#363538; color:white; margin-left: 10px;">{{NoteGeneral+"
+                                    /5"}}</button>
+
+                        </ng-container>
+                            
                             <button class="button is-outlined" (click)="this.hideNoteFilm=!this.hideNoteFilm"
                                 style="border-radius: 5px; background-color:#81E6DA; color:black; margin-left: 20px;">Modifier / Detailler</button>
                             </div>
@@ -94,7 +99,7 @@
     </div>
     
 </div>
-<app-ratings [hidden]="hideNoteFilm"></app-ratings>
+<app-ratings [hidden]="hideNoteFilm" ></app-ratings>
  <app-casting [hidden]="!hideNoteFilm"></app-casting>
 
 <app-comments [hidden]="!hideNoteFilm"></app-comments>
