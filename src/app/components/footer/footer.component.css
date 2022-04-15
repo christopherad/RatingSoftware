@@ -1,50 +1,106 @@
-.footer{
-    padding: 0%;
-}
-#rs{
-    background-color: #81E6DA;
-    color: black;
-    padding-top: 1em;
-    padding-bottom: 2em;
-}
-.level-item{
-    text-align: center;
-    color: black;
-    margin-right: 5px;
-}
-#menu{
-    background-color: black;
-    margin-top: -3.5%;
-}
-#row{
-    background-color: grey;
-    margin: 0 5em 0 5em;
-}
-#row h4{
-    padding: 5px;
+.footer {
+  padding: 0%;
+  background-color: #363538;
 }
 
-h4{
-    color: black;
-    background-color: #81E6DA;
-    border-radius: 5px;
+.hero.is-primary {
+  /* margin-top: 7%; */
+  /* margin-bottom: 7%; */
+  background-color: #81e6da;
+}
+.hero-body {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.hero-body .title {
+  font-size: 1.75rem;
+  /* padding-left: 2.75rem; */
+  font-weight: 700;
+  color: black;
+  margin-bottom: 0;
+}
+.menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, auto));
+  justify-content: center;
+  margin: 3% auto;
+  gap: 1.5em;
+}
+.sous-menu {
+  max-width: 400px;
+
+  /* display: block;
+  border-radius: 15px;
+  background-color: #656469; */
 }
 
-a{
-    text-align: center;
-    color: white;
+.text-menu {
+  padding: 10px 60px;
+  background: #81e6da;
+  border-radius: 15px;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+.columns {
+  display: inline;
+  justify-content: center;
+  align-items: center;
+}
+#logo {
+  justify-content: center;
+}
+/* .bottom-menu {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 10%;
+} */
+#rs {
+  background-color: #81e6da;
+  color: black;
+  padding-top: 1em;
+  padding-bottom: 2em;
+}
+.level-item {
+  text-align: center;
+  color: black;
+  margin-right: 5px;
+}
+/* #menu {
+  background-color: black; 
+   margin-top: -3.5%;
+} */
+
+#row h4 {
+  padding: 5px;
 }
 
-span{
-    color: white;
+h4 {
+  color: black;
+  background-color: #81e6da;
+  border-radius: 5px;
 }
 
-p{
-    color: white;
+li a {
+  line-height: 1.75rem;
+  color: white !important;
+  text-decoration: none !important;
+  outline: none !important;
 }
-#logo{
-    margin-left: 40px;
+li a:hover {
+  color: #81e6da !important;
 }
-.columns.is-multiline.is-mobile.is-vcentered{
-    margin-bottom: 10px;
+
+span {
+  color: white;
 }
+
+p {
+  color: white;
+}
+/* #logo {
+  margin-left: 40px;
+}
+.columns.is-multiline.is-mobile.is-vcentered {
+  margin-bottom: 10px;
+} */

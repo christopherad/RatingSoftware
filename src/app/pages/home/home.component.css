@@ -1,15 +1,19 @@
-.div-1 {
-  background-color: #8ae4fd;
+.hero.is-primary {
+  margin-top: 7%;
+  margin-bottom: 7%;
+  background-color: #81e6da;
 }
-
-h1 {
-  margin-left: 1em;
+.hero-body .title {
+  font-size: 2rem;
+  padding-left: 2.75rem;
+  font-weight: 700;
+  color: black;
 }
 .container {
   display: grid;
   justify-content: center;
   margin: 7% auto;
-  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(330px, auto));
   grid-gap: 0.5em;
 }
 .title {
@@ -32,6 +36,7 @@ h1 {
   max-width: 330px !important;
   height: 730px !important;
   border-radius: 12px !important;
+  margin-bottom: 25px;
   transition: 0.15s all ease-in-out;
 }
 .card:hover {
@@ -55,7 +60,6 @@ img {
   padding: 6px 15px;
 }
 .iconArrow {
-  /* padding: 0 5px 0 30px; */
   height: 50px;
   line-height: 50px;
   vertical-align: middle;

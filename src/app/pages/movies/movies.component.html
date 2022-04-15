@@ -1,102 +1,155 @@
 <div>
-    <ng-container *ngIf="IsMessage==true">
-<article class="message is-success">
-    <div class="message-header">
+  <ng-container *ngIf="IsMessage == true">
+    <article class="message is-success">
+      <div class="message-header">
         <p>Film Ajouté</p>
         <button class="delete" aria-label="delete" (click)="OnClick()"></button>
-    </div>
-    <div class="message-body">
-      Le Film {{Film.title}} a été ajouté a votre liste de favoris
-    </div>
-</article>
-</ng-container>
-<ng-container *ngIf="isError==true">
-<article class="message is-danger">
-    <div class="message-header">
+      </div>
+      <div class="message-body">
+        Le Film {{ Film.title }} a été ajouté a votre liste de favoris
+      </div>
+    </article>
+  </ng-container>
+  <ng-container *ngIf="isError == true">
+    <article class="message is-danger">
+      <div class="message-header">
         <p>Film deja Ajouté</p>
-        <button class="delete" aria-label="delete" (click)="OnClickError()"></button>
+        <button
+          class="delete"
+          aria-label="delete"
+          (click)="OnClickError()"
+        ></button>
+      </div>
+      <div class="message-body">
+        Le Film {{ Film.title }} est deja ajouté a votre liste de favoris
+      </div>
+    </article>
+  </ng-container>
+  <div class="card columns">
+    <div class="card-image">
+      <figure class="image">
+        <img
+          style="width: 90%"
+          alt="Placeholder image"
+          src="https://image.tmdb.org/t/p/w300//{{ Film.poster_path }}"
+        />
+      </figure>
     </div>
-    <div class="message-body">
-        Le Film {{Film.title}} est deja ajouté a votre liste de favoris
-    </div>
-</article>
+    <div class="textBox column">
+      <div class="is-flex-direction-row">
+        <div class="headerBox columns">
+          <div
+            class="column is-align-items-flex-start is-justify-content-flex-start"
+          >
+            <h2 class="title is-2" style="color: white">{{ Film.title }}</h2>
+          </div>
+          <div
+            class="column is-align-items-flex-end is-justify-content-flex-end"
+            style="display: flex"
+          >
+            <button class="addFolder button">+ Ajouter à un dossier</button>
 
-    </ng-container>
-<div class="card columns "style="margin:30px;background-color: #363538;margin-left:150px;margin-right:150px;" >
-    
-    <div class="card-image ">
-        <figure class="image ">
-            <img style="width:90%;"  alt="Placeholder image" src="https://image.tmdb.org/t/p/w300//{{Film.poster_path}}">
-        </figure>
-    </div>
-    <div class="column is-8"    >
-        <div class="is-flex-direction-row" style="margin-left: 30px;">
-            <div class="columns">
-                    <div class="column  is-align-items-flex-start is-justify-content-flex-start">
-                        <h2 class="title is-2" style="color: white;">{{Film.title}}</h2>
-                    </div>
-                    <div class="column  is-align-items-flex-end is-justify-content-flex-end" style="display:flex;">
-                        <button class="button" style="background-color: #81E6DA;">+ Ajouter à un dossier</button>
-                        <button class="button is-ghost" (disabled)="isFavourite==true" (click)="AddFavoris()">
-                            <ng-container *ngIf="isFavourite==true"><img [src]="ImageFavori"></ng-container>
-                            <ng-container *ngIf="isFavourite==false"><img [src]="ImageNonFavori"></ng-container>
-                        </button>
-                    </div>       
-            </div>
-            </div>
-            <div class="is-flex-direction-row" style="margin-left: 30px;">
-            <ng-container *ngFor="let genre of Film.genres let i=index">
-                <span class="tag is-info" style="  margin-right: 5px;">{{genre.name}}</span>
-            </ng-container>
-            </div>
-            <div class="is-flex-direction-row" style="margin-left: 30px; margin-top: 20px;">
-                <h4 class="title is-4" style="color: white;">Synopsis</h4>
-            </div>
-            <div class="is-flex-direction-row" style="margin-left: 30px; margin-top: 20px;">
-                <p style="color: white;">{{Film.overview}}</p>
-            </div>
-            <div class="is-flex-direction-row" style="margin-left: 30px; margin-top: 20px;">
-                <div class="columns">
-                    <div class="column" style="border-right: 2px solid #81E6DA;">
-                        <h4 class="title is-4" style="color: white;">Note</h4></div>
-                
-                <div class="column">
-                    <h4 class="title is-4" style="color: white;">Ma Note</h4>
-                </div>  
-            </div>
-            </div>
-            <div class="is-flex-direction-row" style="margin-left: 30px;">
-                <div class="columns">
-                    <div class="column" style="border-right: 2px solid #81E6DA;">
-                        <button class="button is-outlined"
-                            style="border: 3px solid #81E6DA;border-radius: 5px; background-color:#363538; color:white"><img [src]="ImageFavori"
-                                style="width: 50%;" />{{Film.vote_count}}</button>
-                        <button class="button is-outlined"
-                            style="border: 3px solid #81E6DA;border-radius: 5px; background-color:#363538; color:white; margin-left: 10px;">{{Film.vote_average}}/10</button>
-                    </div>
-                    <div class="column">
-                            <button class="button is-outlined"
-                                style="border: 3px solid #81E6DA;border-radius: 5px; background-color:#363538; color:white; margin-left: 10px;">8.6/10</button>
-                            <button class="button is-outlined" (click)="this.hideNoteFilm=!this.hideNoteFilm"
-                                style="border-radius: 5px; background-color:#81E6DA; color:black; margin-left: 20px;">Modifier / Detailler</button>
-                            </div>
-
-                </div>
-       
-            </div>
-       
-        
-        
-        <div>
-           
-        
+            <button
+              class="button is-ghost"
+              (disabled)="(isFavourite == true)"
+              (click)="AddFavoris()"
+            >
+              <ng-container *ngIf="isFavourite == true"
+                ><img [src]="ImageFavori"
+              /></ng-container>
+              <ng-container *ngIf="isFavourite == false"
+                ><img [src]="ImageNonFavori"
+              /></ng-container>
+            </button>
+          </div>
         </div>
+      </div>
+      <div class="genres is-flex-direction-row">
+        <ng-container *ngFor="let genre of Film.genres; let i = index">
+          <span class="media-type">{{ genre.name }}</span>
+        </ng-container>
+      </div>
+      <div class="is-flex-direction-row" style="margin-top: 15px">
+        <h4 class="title is-4" style="color: white">Synopsis</h4>
+      </div>
+      <div
+        class="movieDescription is-flex-direction-row"
+        style="margin-top: 20px"
+      >
+        <p style="color: white">{{ Film.overview }}</p>
+      </div>
+      <div class="is-flex-direction-row" style="margin-top: 20px">
+        <div class="columns">
+          <div class="column">
+            <h4 class="title is-4" style="color: white">Note</h4>
+            <div class="rates column">
+              <div class="boxRate">
+                <button
+                  class="button is-outlined"
+                  style="
+                    border: 2px solid #81e6da;
+                    border-radius: 12px;
+                    background-color: #363538;
+                    color: white;
+                  "
+                >
+                  <div class="heart-icon">
+                    <!-- icon favorite à modifier pour la suite -->
+                    <mat-icon class="favorite-icon" aria-hidden="false">
+                      favorite</mat-icon
+                    >
+                  </div>
+                  <!-- <img [src]="ImageFavori" style="width: 50%" />-->{{
+                    Film.vote_count
+                  }}
+                </button>
+              </div>
+              <div class="boxRate">
+                <button
+                  class="button"
+                  style="
+                    border: 2px solid #81e6da;
+                    border-radius: 12px;
+                    background-color: #363538;
+                    color: white;
+                  "
+                >
+                  {{ Film.vote_average }}/10
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <h4 class="title is-4" style="color: white">Ma Note</h4>
+            <div class="myRate column">
+              <button
+                class="boxRate button"
+                style="
+                  border: 2px solid #81e6da;
+                  border-radius: 12px;
+                  background-color: #363538;
+                  color: white;
+                "
+              >
+                8.6/10
+              </button>
+              <button
+                class="editRate boxRate button is-outlined"
+                (click)="this.hideNoteFilm = !this.hideNoteFilm"
+              >
+                Modifier / Détailler
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div></div>
     </div>
-    
-</div>
-<app-ratings [hidden]="hideNoteFilm"></app-ratings>
- <app-casting [hidden]="!hideNoteFilm"></app-casting>
+  </div>
+  <app-ratings [hidden]="hideNoteFilm"></app-ratings>
+  <app-casting [hidden]="!hideNoteFilm"></app-casting>
 
-<app-comments [hidden]="!hideNoteFilm"></app-comments>
-
+  <app-comments [hidden]="!hideNoteFilm"></app-comments>
 </div>
