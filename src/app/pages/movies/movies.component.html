@@ -123,6 +123,7 @@
           <div class="column">
             <h4 class="title is-4" style="color: white">Note Générale du Site</h4>
             <div class="myRate column">
+                <ng-container *ngIf="NoteGeneral!=='0'">
               <button
                 class="boxRate button"
                 style="
@@ -134,6 +135,7 @@
               >
                 {{NoteGeneral +"/ 5 "}}
               </button>
+            </ng-container>
               <button
                 class="editRate boxRate button is-outlined"
                 (click)="this.hideNoteFilm = !this.hideNoteFilm"
