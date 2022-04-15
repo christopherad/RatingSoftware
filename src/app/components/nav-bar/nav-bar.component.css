@@ -5,11 +5,6 @@ nav {
   height: 50px;
   margin: 45px 10% 150px 10% !important;
 }
-/* .navbar-start {
-  border-radius: 12px;
-  flex-grow: 1;
-  justify-content: center;
-} */
 .navbar {
   display: flex;
   background-color: unset;
@@ -52,6 +47,16 @@ nav {
   background-color: #82e7d9;
   border-radius: 12px;
 }
+.navbar-logout {
+  margin-left: 5%;
+  display: flex;
+  padding: 0 25px;
+  align-items: center;
+  background-color: #e7d982;
+  border-radius: 12px;
+  font-size: large;
+  font-weight: 600;
+}
 .dark-mode {
   display: flex;
   align-items: center;
@@ -63,6 +68,9 @@ nav {
 }
 .dark-mode:hover {
   background-color: #fbb742;
+}
+.navbar-logout:hover {
+  background-color: #e1d060;
 }
 navbar-item:focus {
   background-color: unset;

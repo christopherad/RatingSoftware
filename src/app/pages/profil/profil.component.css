@@ -1,119 +1,119 @@
-.container{
-    background-color: #363538;
-    border-radius: 15px;
-    margin-left: 8em;
-    margin-right: 8em;
-    margin-top: 50px;
-    margin-bottom: 8em;
+.container {
+  background-color: #363538;
+  border-radius: 15px;
+  margin-left: 8em;
+  margin-right: 8em;
+  margin-top: 50px;
+  margin-bottom: 8em;
 }
-#col{gap: 0.75em;}
-#photoProfil{
-    margin-top: 25px;
-    margin-left: 25px;
+#col {
+  gap: 0.75em;
 }
-#pseudo{
-    color: black;
-    background-color: #81E6DA;
-    padding: 5px;
-    border-radius: 15px;
-    margin-top: 25px;
-    height: 2em;
-    text-align: center;
-    align-self: center;
+#photoProfil {
+  margin-top: 25px;
+  margin-left: 25px;
+}
+#pseudo {
+  color: black;
+  background-color: #81e6da;
+  padding: 5px;
+  border-radius: 15px;
+  margin-top: 25px;
+  height: 2em;
+  text-align: center;
+  align-self: center;
+}
 
+#bio {
+  color: white;
+  text-align: center;
 }
-
-#bio{
-    color: white;
-    text-align: center;
-    
+#paragraphe {
+  border: solid;
+  border-color: #81e6da;
+  border-radius: 15px;
+  margin-left: 6%;
+  margin-right: 6%;
 }
-#paragraphe{
-    border: solid;
-    border-color: #81E6DA;
-    border-radius: 15px;
-    margin-left: 6%;
-    margin-right: 6%;
-}
-h5{
-    border-radius: 15px;
-    padding-left: 25px;
+h5 {
+  border-radius: 15px;
+  padding-left: 25px;
 }
 .results {
-    margin: 48px 10%;
-    display: inline-block;
-    justify-content: center;
+  margin: 48px 10%;
+  display: inline-block;
+  justify-content: center;
 }
 
 .total-result {
-    background-color: aqua;
-    border-radius: 10px;
-    padding: 10px;
-    max-width: 130px;
-    text-align: center;
-    margin-bottom: 15px;
+  background-color: aqua;
+  border-radius: 10px;
+  padding: 10px;
+  max-width: 130px;
+  text-align: center;
+  margin-bottom: 15px;
 }
 
 .textBox {
-    display: block;
-    width: 100%;
-    padding: 20px 20px;
-    margin-left: 15px;
+  display: block;
+  width: 100%;
+  padding: 20px 20px;
+  margin-left: 15px;
 }
 
 .first-box {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 
-    align-items: center;
+  align-items: center;
 }
 
 .image {
-    width: 128px;
-    height: auto;
+  width: 128px;
+  height: auto;
 }
 
 .imgBox {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .result {
-    /* display: flex;
+  /* display: flex;
   padding: 20px 30px;
   background-color: #363538;
   border-radius: 12px;
   margin-bottom: 30px;
   min-height: 232px; */
-    /* overflow: hidden; */
+  /* overflow: hidden; */
 }
 
 .test {
-    display: flex;
-    padding: 20px 30px;
+  display: flex;
+  padding: 20px 30px;
 
-    background-color: #81E6DA;
-    border-radius: 12px;
-    margin-bottom: 30px;
-    min-height: 232px;
+  background-color: #363538;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  min-height: 232px;
 }
 
 .result .title {
-    font-weight: bold;
-    color: white;
-    font-size: 28px;
-    margin: 0;
+  font-weight: bold;
+  color: white;
+  font-size: 28px;
+  margin: 0;
 }
 
 .result h2 {
-    font-weight: 500;
-    color: white;
-    font-size: 20px;
+  font-weight: 500;
+  color: white;
+  font-size: 20px;
 }
 
 .result p {
-    font-weight: 500;
-    color: white;
-    font-size: 18px;
+  font-weight: 500;
+  color: white;
+  font-size: 18px;
 }

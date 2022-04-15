@@ -131,12 +131,15 @@
       <!-- <a class="navbar-item" routerLink=""> Login </a> -->
 
       <ng-container *ngIf="cookieValue; else newDeb">
-        <a class="button" routerLink="/Profil" routerLinkActive="true">
+        <a
+          class="navbar-login navbar-item"
+          routerLink="/Profil"
+          routerLinkActive="true"
+        >
           Profil
         </a>
-        <button class="button is-warning" (click)="onClick()">
-          Déconnexion
-        </button>
+
+        <a class="navbar-logout" (click)="onClick()"> Déconnexion </a>
       </ng-container>
       <ng-template #newDeb>
         <a

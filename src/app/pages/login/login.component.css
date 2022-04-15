@@ -10,14 +10,14 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 25px 0;
   background: #81e6da;
-  border-radius: 50px 50px 0px 0px;
+  width: 100%;
+  border-radius: 15px 15px 0px 0px;
   font-size: 25px;
 }
 .form {
   display: grid;
-  border-radius: 0 0 50px 50px;
+  border-radius: 0 0 15px 15px;
   background-color: #313030;
 }
 input[type="text"],
@@ -27,10 +27,30 @@ input[type="email"] {
   border: none;
   margin: 7% 12% 0 12%;
   padding: 30px 0 30px 30px;
-  border-radius: 50px;
+  border-radius: 40px;
   font-size: 23px;
 }
-
+.submit {
+  margin-bottom: 7%;
+}
+.form-title-left {
+  font-weight: 500;
+  border-radius: 15px 0px 0px 0px;
+  padding: 20px 0;
+  width: 50%;
+  text-align: center;
+}
+.form-title-right {
+  font-weight: 500;
+  border-radius: 0 15px 0px 0px;
+  padding: 20px 0;
+  width: 50%;
+  text-align: center;
+}
+.form-title-right:hover,
+.form-title-left:hover {
+  background: #63e2d1;
+}
 /* .btn-submit {
   display: flex;
   justify-content: space-evenly;
@@ -60,6 +80,7 @@ input[type="email"] {
 } */
 .connexion {
   margin-top: 7%;
+  margin-bottom: 7%;
   text-align: center;
   color: white;
   text-decoration: underline;

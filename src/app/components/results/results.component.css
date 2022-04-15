@@ -2,6 +2,10 @@
   margin: 48px 10%;
   display: inline-block;
   justify-content: center;
+  transition: 0.15s all ease-in-out;
+}
+.result:hover {
+  transform: scale(1.03);
 }
 .total-result {
   background-color: aqua;

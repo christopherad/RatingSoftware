@@ -6,7 +6,9 @@ body {
   background-color: #202022 !important;
 }
 body {
+  padding: 0;
   margin: 0;
+  width: 100%;
   font-family: "Roboto", sans-serif;
 }
 h1,
