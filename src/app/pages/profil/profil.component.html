@@ -2,9 +2,17 @@
     <section>
         <div class="row">
             <div class="columns is-multiline is-mobile is-vcentered" id="col">
+                
                 <div id="photoProfil" class="flex-col-md-1">
                     <img src="{{photoProfil}}">
                 </div>
+               <form (ngSubmit)="onUpload()" enctype="multipart/form-data">
+                <input style="display: block" type="file" (change)="onFileChanged($event)" #fileInput>
+                <button  type="button" (click)="fileInput.click()">Select File</button>
+                <button [disabled]="disabled" type="submit" >Upload!</button>
+                </form>
+
+
                 <div id="pseudo" class="column is-one-fifth">
                     <span>{{user.username}}</span> 
                 </div>
