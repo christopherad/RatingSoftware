@@ -16,6 +16,7 @@ import { RegisterService } from 'src/app/services/Register/register.service';
 })
 export class RegisterComponent implements OnInit {
   registerForm!: FormGroup;
+  isMessage:boolean=false;
 
   constructor(
     private registerService: RegisterService,
@@ -38,8 +39,9 @@ export class RegisterComponent implements OnInit {
       // console.log('vous devez remplir tout les champs');
       return;
     }
-    console.log(this.registerForm.value);
+  
 
     this.registerService.register(this.registerForm.value);
+    this.isMessage=true
   }
 }

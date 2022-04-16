@@ -104,6 +104,20 @@ export class RatingsComponent implements OnInit {
         this.cookieValue
       )
       .then((response) => {
+        location.reload();
+      });
+
+    this.api
+      .AddRatings(
+        this.user.id,
+        this.idFilm,
+        this.Listcritiere,
+        recommendation,
+        critique,
+        ressenti,
+        this.cookieValue
+      )
+      .then((response) => {
         this.isMessage = true;
       });
   }

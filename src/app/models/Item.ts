@@ -15,5 +15,7 @@ export interface Item {
   rating:string;
   ratings_count:string
   item:Array<Item>
+  release_date:string
+  categorie:string
   //
 }

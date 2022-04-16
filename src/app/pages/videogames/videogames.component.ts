@@ -122,11 +122,11 @@ export class VideogamesComponent implements OnInit {
       this.apimovies.AddFavourite(
         this.Videogame,
         this.idutilisateur,
-        this.cookieValue
+        this.cookieValue,
+        'Jeu Vidéo'
       );
-      this.IsMessage = true;
       setTimeout(() => {
-        location.reload();
+        this.IsMessage = true;
       }, 500);
     }
   }

@@ -1,4 +1,15 @@
 <div class="registerComponent">
+  <ng-container *ngIf="isMessage==true">
+    <article class="message is-success">
+      <div class="message-header">
+        <p>Inscription</p>
+        <button class="delete" aria-label="delete" (click)="isMessage=false"></button>
+      </div>
+      <div class="message-body">
+        Un email vous a etez envoyé a votre adresse mail afin de confirmer votre compte
+      </div>
+    </article>
+  </ng-container>
   <div class="form-container">
     <div class="header-form">
       <a routerLink="/Login">Connexion</a>

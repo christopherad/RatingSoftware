@@ -124,7 +124,7 @@ this.VerifierFavoris(this.ListSerie,this.Serie.id)
    }
    else
    {
- this.api.AddFavourite(this.Serie,this.idutilisateur,this.cookieValue)
+ this.api.AddFavourite(this.Serie,this.idutilisateur,this.cookieValue,"Série")
     this.IsMessage=true;
    setTimeout(()=>{location.reload()},500)
    }

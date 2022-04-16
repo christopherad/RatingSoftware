@@ -60,21 +60,23 @@ export class MoviesServices {
 
   }
 
-  AddFavourite(item:Item,idutilisateur:string, token:string)
+  AddFavourite(item:Item,idutilisateur:string, token:string,categorie:string)
   {
+    console.log(categorie)
 axios
   .post('http://51.158.72.178:1337/api/favoris/add', {
      
       userId: idutilisateur,
     itemId: item.id,
     description: item.description,
-    categorie: null,
+    categorie: categorie,
     poster_path: item.poster_path,
     overview: item.overview,
     vote_average: item.vote_average,
     vote_count: item.vote_count,
     name: item.name,
     genres: item.genres,
+   
   },{
     headers: {
       'Authorization': `Bearer ${token}`,
@@ -88,6 +90,7 @@ axios
   
   .then(response => {
     console.log("Item has been added to your favorites.");
+    console.log(response.data)
   })
   .catch(error => {
     console.log('An error occurred:', error.response);

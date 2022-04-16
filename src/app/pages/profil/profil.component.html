@@ -1,80 +1,138 @@
-<div class="container">
-    <section>
-        <div class="row">
-            <div class="columns is-multiline is-mobile is-vcentered" id="col">
-                <div id="photoProfil" class="flex-col-md-1">
-                    <img src="{{photoProfil}}">
-                </div>
-                <div id="pseudo" class="column is-one-fifth">
-                    <span>{{user.username}}</span> 
-                </div>
-            </div>              
-        </div>
-        <div class="row col-lg-6 p-4 col-md-7 text-center" id="bio">
-            <h3 class="is-size-3">Description</h3>
-            <p class="mb-0 mt-3" id="paragraphe">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-    </section>
-    <div class="row mt-3">
-        <div class="px-4 py-3">
-            <h5 class="mb-0" style="background-color: white;">Favoris</h5>
-            <div class="rounded shadow-sm results">
-                <ng-container *ngFor="let favoris of ListFavoris">
-                    <ng-container *ngFor="let item of favoris.item">
-            <div class="result column">
-              
-                    <div class="test">
-                            <a [routerLink]=" item.title!=null?(['/Movie',item.id]):(['/Serie',item.id])||item.background_image!==null?(['/Videogame',item.id]):(['/Home',item.id])"
-                            
-                        >
-                                        <div class="imgBox">
-                                            <figure class="image">
-                                                <a href="https://imgbb.com/"><img src="https://image.tmdb.org/t/p/w300//{{item.poster_path}}" onerror="this.src='../../assets/Images/inconnu.png';" border="0" width="300px" /></a>
-                                            </figure>
-                                        </div>
-                                        <div class="textBox">
-                                            <div class="first-box">
-                                                <h1 class="title">
-                                          
-                                                  
-                            
-                                                            {{item.name||item.title}}
+<!-- portotype card -->
 
-                                                </h1>
-                                            </div>
-                                        </div>
-                
-                                        <footer class="card-footer">
-                                            <a href="#" class="card-footer-item">Plus de détails</a>
-                                        </footer>
-                                 
-                
-                
-                          
-                            </a>
-                      
-                    </div>
-                    </div>
-                
-                </ng-container>
-                </ng-container>
-                
-         
-            </div>
+<!-- old version -->
+<div class="container">
+  <section>
+    <div class="row">
+      <div class="columns is-multiline is-mobile is-vcentered" id="col">
+        <div id="photoProfil" class="flex-col-md-1">
+          <img src="{{ avatar }}" style="width: 200px; border-radius: 10px" />
         </div>
-        <div class="px-4 py-3">
-            <h5 class="mb-0" style="background-color: white;">Notes récentes</h5>
-            <div class="p-4 rounded shadow-sm">
-                <app-card></app-card>
-            </div>
+        <form (ngSubmit)="onUpload()" enctype="multipart/form-data">
+          <input
+            style="display: none"
+            type="file"
+            (change)="onFileChanged($event)"
+            #fileInput
+          />
+          <button type="button" (click)="fileInput.click()">Select File</button>
+          <button [disabled]="disabled" type="submit">Upload!</button>
+        </form>
+
+        <div id="pseudo" class="column is-one-fifth">
+          <span>{{ user.username }}</span>
         </div>
-        <div class="px-4 py-3">
-            <h5 class="mb-0" style="background-color: white;">Top 50 ever</h5>
-            <div class="p-4 rounded shadow-sm">
-                <app-card></app-card>
-            </div>
-        </div>
+      </div>
     </div>
+  </section>
+  <div class="row mt-3">
+    <div class="px-4 py-3">
+      <h5 class="mb-0" style="background-color: white">Favoris</h5>
+      <div class="containerBox">
+        <ng-container *ngFor="let favoris of ListFavoris">
+          <ng-container *ngFor="let item of favoris.item">
+            <div class="card">
+              <div class="card-image">
+                <div class="heart-icon">
+                  <mat-icon class="favorite-icon" aria-hidden="false">
+                    favorite</mat-icon
+                  >
+                </div>
+
+                <!-- <div class="note">10/10</div> -->
+
+                <img
+                  src="https://image.tmdb.org/t/p/w300//{{ item.poster_path }}"
+                  alt="Placeholder image"
+                />
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <h1 class="title is-4">{{ item.name || item.title }}</h1>
+                  </div>
+                </div>
+                <div>
+                  <button
+                    class="detail"
+                    (click)="details(item.id, item.categorie)"
+                    routerLink="/Movie/{{ item.id }}"
+                  >
+                    <div class="title-button is-4">Voir en détails</div>
+                    <div class="iconArrow">
+                      <mat-icon
+                        [inline]="true"
+                        aria-hidden="false"
+                        aria-label="Example arrow icon"
+                        >navigate_next</mat-icon
+                      >
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+        </ng-container>
+      </div>
+
+      <!-- <div class="rounded shadow-sm results">
+        <ng-container *ngFor="let favoris of ListFavoris">
+          <ng-container *ngFor="let item of favoris.item">
+            <div class="result column">
+              <div class="test">
+                <!---- <a [routerLink]=" 
+                            item.categorie==='Film'?(['/Movie',item.id]):(['/Home',item.id])
+                            ||item.categorie==='Série'?(['/Serie',item.id]):(['/Home',item.id])
+                            ||item.categorie==='Jeu Vidéo'?(['/Videogame',item.id]):(['/Home',item.id])
+                           
+                            "
+                            
+
+                <div class="imgBox">
+                  <figure class="image">
+                    <a href="https://imgbb.com/"
+                      ><img
+                        src="https://image.tmdb.org/t/p/w300//{{
+                          item.poster_path
+                        }}"
+                        onerror="this.src='../../assets/Images/inconnu.png';"
+                        border="0"
+                        width="300px"
+                    /></a>
+                  </figure>
+                </div>
+                <div class="textBox">
+                  <div class="first-box">
+                    <h1 class="title">
+                      {{ item.name || item.title }}
+                    </h1>
+                  </div>
+                </div>
+
+                <footer class="card-footer">
+                  <div class="card-footer-item">
+                    <button (click)="details(item.id, item.categorie)">
+                      Plus de détails
+                    </button>
+                  </div>
+                </footer>
+              </div>
+            </div>
+          </ng-container>
+        </ng-container>
+      </div> -->
+    </div>
+    <div class="px-4 py-3">
+      <h5 class="mb-0" style="background-color: white">Notes récentes</h5>
+      <div class="p-4 rounded shadow-sm">
+        <app-card></app-card>
+      </div>
+    </div>
+    <div class="px-4 py-3">
+      <h5 class="mb-0" style="background-color: white">Top 50 ever</h5>
+      <div class="p-4 rounded shadow-sm">
+        <!-- <app-card></app-card> -->
+      </div>
+    </div>
+  </div>
 </div>

@@ -120,9 +120,10 @@
           </div>
 
           <div class="column">
-            <h4 class="title is-4" style="color: white">Ma Note</h4>
+            <h4 class="title is-4" style="color: white">Note Générale du Site</h4>
             <div class="rates column">
               <div class="boxRate">
+                <ng-container *ngIf='NoteGeneral!=="0"'>
                 <button
                   class="button"
                   style="
@@ -132,11 +133,12 @@
                     color: white;
                   "
                 >
-                  8.6/10
+                {{NoteGeneral+" /5"}}
                 </button>
+                </ng-container>
               </div>
               <div class="boxRate">
-                <button class="editRate button">Modifier / Détailler</button>
+                <button class="editRate button" (click)="this.hideNoteFilm=!this.hideNoteFilm">Modifier / Détailler</button>
               </div>
             </div>
           </div>
@@ -146,6 +148,7 @@
       <div></div>
     </div>
   </div>
-  <app-casting [isSerie]="isSerie"> </app-casting>
-  <app-comments></app-comments>
+  <app-casting [hidden]="!hideNoteFilm" [isSerie]="isSerie"> </app-casting>
+<app-ratings [hidden]="hideNoteFilm"></app-ratings>
+  <app-comments [hidden]="!hideNoteFilm"></app-comments>
 </div>
