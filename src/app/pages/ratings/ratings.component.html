@@ -1,198 +1,245 @@
-
-<ng-container *ngIf="isMessage==true">
+<ng-container *ngIf="isMessage == true">
   <article class="message is-success">
     <div class="message-header">
       <p>Note</p>
       <button class="delete" aria-label="delete"></button>
     </div>
-    <div class="message-body">
-     Votre note a été comptabiliser ! 
-    </div>
+    <div class="message-body">Votre note a été comptabiliser !</div>
   </article>
 </ng-container>
 
-<div style="margin-left: 150px; margin-right: 150px">
-    <form [formGroup]="RatingsForm" (ngSubmit)="onSubmit()">
-  <h3 class="title is-3" style="color: white">Note</h3>
-  <div
-    class="card columns"
-    style="background-color: #363538; text-align: center"
-  >
-    <div class="column is-6" style="border-right: 2px solid #81e6da">
-      <div>
-        <h4 style="color: white; margin-bottom: 10px">Comment tu te sens ?</h4>
-        <div class="control">
-          <label class="radio">
-            <input type="radio"  class="button is-ghost" value="Content" formControlName="ressenti" />
-            <img [src]="EmojiContent" />
-          </label>
-          <label class="radio">
-            <input type="radio" class="button is-ghost" value="Ennuyé" formControlName="ressenti" />
-            <img [src]="EmojiEnnuye" />
-          </label>
-          <label class="radio">
-            <input type="radio"  class="button is-ghost" value="Choqué"formControlName="ressenti" />
-            <img [src]="EmojiChoque" />
-          </label>
-          <label class="radio">
-            <input type="radio"  class="button is-ghost" value="Triste" formControlName="ressenti" />
-            <img [src]="EmojiTriste" />
-           
-          </label>
-          <label class="radio">
-            <input type="radio"  class="button is-ghost" value="Amusé" formControlName="ressenti" />
-            <img [src]="EmojiAmuse" />
-          </label>
-        </div>
-      </div>
-      <div style="margin-bottom: 10px">
-        <h4 style="color: white; margin-bottom: 10px">Un commentaire ou une critique?</h4>
-       
-        <textarea class="textarea is-link" placeholder="Critique" formControlName="critique"></textarea>
-      </div>
-      <div style="margin-top: 10px">
-        <h4 style="color: white; margin-bottom: 10px">Je recommande à ?</h4>
-        <div style="display: flex; flex-direction: column">
-          <div
-            style="
-              border: 3px solid;
-              background-color: white;
-              border-radius: 10px;
-            "
-          >
+<div class="">
+  <form [formGroup]="RatingsForm" (ngSubmit)="onSubmit()">
+    <h3 class="title is-3" style="margin: 5% 10% 5% 10%; color: white">Note</h3>
+    <div
+      class="ratingBox card columns"
+      style="background-color: #363538; text-align: center"
+    >
+      <div class="column is-6" style="border-right: 2px solid #81e6da">
+        <div class="column">
+          <h4 style="color: white; margin-bottom: 25px">
+            Comment tu te sens ?
+          </h4>
+
+          <div class="control">
             <label class="radio">
-              <input type="radio" class="button"  value="Tout le monde" formControlName="recommendation" />
-           <div> Tout le Monde</div>
-              
-              </label>
-          </div>
-          <div
-            style="
-              border: 3px solid;
-              background-color: white;
-              border-radius: 10px;
-            "
-            class="radio"
-          >
-            <label class="radio">
-              <input type="radio" class="button" value="Fan du directeur" formControlName="recommendation" />
-              <div>Fan du directeur</div>
+              <input
+                type="radio"
+                class="boxTest button is-ghost"
+                value="Content"
+                formControlName="ressenti"
+              />
+
+              <div class="heart-icon">
+                <!-- icon favorite à modifier pour la suite -->
+                <img class="emoji" [src]="content" />
+              </div>
+              <h2 class="emotion-text">Content</h2>
+
+              <!-- <img [src]="EmojiContent" /> -->
             </label>
-           <img>
-          </div>
-          <div
-            style="
-              border: 3px solid;
-              background-color: white;
-              border-radius: 10px;
-            "
-          >
             <label class="radio">
-              <input type="radio" class="button" value="Fan du genre" formControlName="recommendation" />
-            <div> Fan du genre</div>
+              <input
+                type="radio"
+                class="boxTest button is-ghost"
+                value="Ennuyé"
+                formControlName="ressenti"
+              />
+              <div class="heart-icon">
+                <!-- icon favorite à modifier pour la suite -->
+                <img class="emoji" [src]="EmojiEnnuye" />
+              </div>
+              <h2 class="emotion-text">Ennuyé</h2>
+              <!-- <img [src]="EmojiEnnuye" /> -->
+            </label>
+            <label class="radio">
+              <input
+                type="radio"
+                class="boxTest button is-ghost"
+                value="Choqué"
+                formControlName="ressenti"
+              />
+              <div class="heart-icon">
+                <!-- icon favorite à modifier pour la suite -->
+                <img class="emoji" [src]="EmojiChoque" />
+              </div>
+              <h2 class="emotion-text">Choqué</h2>
+              <!-- <img [src]="EmojiChoque" /> -->
+            </label>
+            <label class="radio">
+              <input
+                type="radio"
+                class="boxTest button is-ghost"
+                value="Triste"
+                formControlName="ressenti"
+              />
+              <div class="heart-icon">
+                <!-- icon favorite à modifier pour la suite -->
+                <img class="emoji" [src]="EmojiTriste" />
+              </div>
+              <h2 class="emotion-text">Triste</h2>
+              <!-- <img [src]="EmojiTriste" /> -->
+            </label>
+            <label class="radio">
+              <input
+                type="radio"
+                class="boxTest button is-ghost"
+                value="Amusé"
+                formControlName="ressenti"
+              />
+              <div class="heart-icon">
+                <!-- icon favorite à modifier pour la suite -->
+                <img class="emoji" [src]="EmojiAmuse" />
+              </div>
+              <h2 class="emotion-text">Amusé</h2>
+              <!-- <img [src]="EmojiAmuse" /> -->
             </label>
           </div>
-         
+        </div>
+        <div style="margin-bottom: 10px">
+          <h4 style="color: white; margin-bottom: 25px; margin-top: 20px">
+            Un commentaire ou une critique?
+          </h4>
+
+          <textarea
+            class="textarea is-link"
+            placeholder="Critique"
+            formControlName="critique"
+          ></textarea>
+        </div>
+        <div style="margin-top: 10px">
+          <h4 style="color: white; margin-bottom: 25px; margin-top: 20px">
+            Je recommande à ?
+          </h4>
+          <div class="recommendation">
+            <label class="radio">
+              <input
+                type="radio"
+                class="button"
+                value="Tout le monde"
+                formControlName="recommendation"
+              />
+              <div class="recommendatbutton">
+                <div>Tout le Monde</div>
+              </div>
+            </label>
+
+            <label class="radio">
+              <input
+                type="radio"
+                class="button"
+                value="Fan du directeur"
+                formControlName="recommendation"
+              />
+              <div class="recommendatbutton">
+                <div>Fan du directeur</div>
+              </div>
+            </label>
+
+            <label class="radio">
+              <input
+                type="radio"
+                class="button"
+                value="Fan du genre"
+                formControlName="recommendation"
+              />
+              <div class="recommendatbutton">
+                <div>Fan du genre</div>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="rightBox column">
+        <div>
+          <h4 style="color: white; margin-bottom: 30px">Comment c'était ?</h4>
+
+          <div>
+            <div class="starRate">
+              <div
+                class="column is-6"
+                style="
+                  border: 3px solid #81e6da;
+                  border-radius: 12px;
+                  align-items: center;
+                  justify-content: center;
+                  display: flex;
+                "
+              >
+                <bar-rating
+                  style="color: white"
+                  formControlName="critere1"
+                  [(rate)]="rate2"
+                  [max]="5"
+                  [theme]="'stars'"
+                  [showText]="true"
+                  [titles]="['', 'Mauvais', 'Bof', 'Ok', 'Bien', 'Génial']"
+                ></bar-rating>
+              </div>
+              <div class="column" style="color: white; text-align: center">
+                Cinematographie
+              </div>
+            </div>
+            <div class="starRate">
+              <div
+                class="column is-6"
+                style="
+                  border: 3px solid #81e6da;
+                  border-radius: 12px;
+                  align-items: center;
+                  justify-content: center;
+                  display: flex;
+                "
+              >
+                <bar-rating
+                  style="color: white"
+                  formControlName="critere2"
+                  [(rate)]="rate3"
+                  [max]="5"
+                  [theme]="'stars'"
+                  [showText]="true"
+                  [titles]="['', 'Mauvais', 'Bof', 'Ok', 'Bien', 'Génial']"
+                ></bar-rating>
+              </div>
+              <div class="column" style="color: white; text-align: center">
+                Histoire
+              </div>
+            </div>
+            <div class="starRate">
+              <div
+                class="column is-6"
+                style="
+                  border: 3px solid #81e6da;
+                  border-radius: 12px;
+                  align-items: center;
+                  justify-content: center;
+                  display: flex;
+                "
+              >
+                <bar-rating
+                  style="color: white"
+                  formControlName="critere3"
+                  [(rate)]="rate4"
+                  [max]="5"
+                  [theme]="'stars'"
+                  [showText]="true"
+                  [titles]="['', 'Mauvais', 'Bof', 'Ok', 'Bien', 'Génial']"
+                ></bar-rating>
+              </div>
+              <div class="column" style="color: white; text-align: center">
+                Autre
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-
-    <div class="column is-6">
-      <div >
-        <h4 style="color: white; margin-bottom: 30px">Comment c'était ?</h4>
-        
-      <div>
-        <div class="columns" style="display: flex; margin-left: 10px">
-          <div
-            class="column is-9"
-            style="
-              border: 3px solid #81e6da;
-              border-radius: 5px;
-              align-items: center;
-              justify-content: center;
-              display: flex;
-              margin-bottom: 30px;
-            "
-          >
-            <bar-rating style="color: white;"
-              formControlName="critere1"
-              [(rate)]="rate2"
-              [max]="5"
-              [theme]="'stars'"
-              [showText]="true"
-              [titles]="['', 'Mauvais', 'Bof', 'Ok', 'Bien', 'Génial']"
-            
-            ></bar-rating>
-          </div>
-          <div class="column is-1" style="color: white; text-align: center">
-            Cinematographie
-          </div>
-        </div>
-        <div class="columns" style="display: flex; margin-left: 10px">
-          <div
-            class="column is-9"
-            style="
-              border: 3px solid #81e6da;
-              border-radius: 5px;
-              align-items: center;
-              justify-content: center;
-              display: flex;
-              margin-bottom: 30px;
-            "
-          >
-            <bar-rating style="color: white;"
-            formControlName="critere2"
-              [(rate)]="rate3"
-              [max]="5"
-              [theme]="'stars'"
-              [showText]="true"
-              [titles]="['', 'Mauvais', 'Bof', 'Ok', 'Bien', 'Génial']"
-         
-            ></bar-rating>
-          </div>
-          <div class="column is-1" style="color: white; text-align: center">
-            Histoire
-          </div>
-        </div>
-        <div
-          class="columns"
-          style="display: flex; margin-left: 10px; margin-bottom: 10px"
-        >
-          <div
-            class="column is-9"
-            style="
-              border: 3px solid #81e6da;
-              border-radius: 5px;
-              align-items: center;
-              justify-content: center;
-              display: flex;
-              margin-bottom: 30px;
-            "
-          >
-            <bar-rating style="color: white;"
-             formControlName="critere3"
-              [(rate)]="rate4"
-              [max]="5"
-              [theme]="'stars'"
-              [showText]="true"
-              [titles]="['', 'Mauvais', 'Bof', 'Ok', 'Bien', 'Génial']"
-            
-            ></bar-rating>
-          </div>
-          <div class="column is-1" style="color: white; text-align: center">
-            Autre
-          </div>
-        </div>
-      </div>
+    <div style="display: flex; justify-content: center">
+      <button class="button" style="background-color: #81e6da; color: #000">
+        Enregistrer
+      </button>
     </div>
-  </div>
-    </div>
-
-  <div style="display: flex; justify-content: center">
-    <button class="button" style="background-color: #81e6da; color: #000">
-      Enregistrer
-    </button>
-  </div>
   </form>
 </div>
