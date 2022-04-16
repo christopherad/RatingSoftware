@@ -17,6 +17,7 @@ export class MoviesComponent implements OnInit {
  ImageNonFavori:any="../../assets/Images/nonFavori.png"
  hideNoteFilm=true;
   idutilisateur:string=""
+  NoteGeneral:string="0"
 
 
 idFilm?:string|undefined
@@ -46,6 +47,31 @@ this.cookieValue = this.cookieService.get('user');
     // Handle success.
     this.user=response.data
     this.idutilisateur=this.user.id
+
+///Fonction Afficher Note
+axios //REMPLACER ":id" PAR L'IDENTIFIANT DE L'ITEM
+  .get(`http://51.158.72.178:1337/api/notes/${this.idFilm}`, {
+    headers: {
+      Authorization: `Bearer ${this.cookieValue}`,
+    },
+  })
+  .then(response => {
+     let test:number
+   test= response.data.note
+  
+  this.NoteGeneral=test.toFixed(2)
+ 
+  
+   
+  })
+  .catch(error => {
+    console.log('An error occurred:', error.response);
+  });
+
+
+
+
+  //Favoris  
   axios 
   .get(`http://51.158.72.178:1337/api/favoris/${this.idutilisateur}`, {
     headers: {
@@ -77,13 +103,13 @@ this.VerifierFavoris(this.ListFilm,this.Film.id)
     this.idfavoris=this.ListFilm[0].idFavorites
     this.api.DeleteFavourite(this.idfavoris,this.cookieValue)
     this.isError=true;
-    setTimeout(()=>{location.reload()},500)
+    setTimeout(()=>{this.isFavourite=false,this.isError=false},500)
    }
    else
    {
  this.api.AddFavourite(this.Film,this.idutilisateur,this.cookieValue)
     this.IsMessage=true;
-     setTimeout(()=>{location.reload()},500)
+     setTimeout(()=>{this.isFavourite=true,this.IsMessage=false},500)
    }
    
 

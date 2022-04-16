@@ -26,6 +26,8 @@ isError:boolean=false;
   ListeVideogames!:any;
  ImageNonFavori:any="../../assets/Images/nonFavori.png"
   idfavoris: any;
+   hideNoteFilm=true;
+  NoteGeneral: string="0";
 
   constructor(private route: ActivatedRoute,private api:VideogamesService,private cookieService: CookieService,private apimovies:MoviesServices) {this.idVideo=this.route.snapshot.paramMap.get('id')! 
   this.cookieValue = this.cookieService.get('user');
@@ -57,6 +59,29 @@ isError:boolean=false;
     // Handle success.
     this.user=response.data
     this.idutilisateur=this.user.id
+
+//Notes
+axios
+  .get(`http://51.158.72.178:1337/api/notes/${this.idVideo}`, {
+    headers: {
+      Authorization: `Bearer ${this.cookieValue}`,
+    },
+  })
+  .then(response => {
+     let test:number
+   test= response.data.note
+  
+  this.NoteGeneral=test.toFixed(2)
+ 
+  
+   
+  })
+  .catch(error => {
+    console.log('An error occurred:', error.response);
+  });
+
+
+    //Favoris
  axios 
   .get(`http://51.158.72.178:1337/api/favoris/${this.idutilisateur}`, {
     headers: {

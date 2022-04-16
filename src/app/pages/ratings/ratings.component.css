@@ -16,3 +16,10 @@
   outline: 3px solid #81E6DA;
   ;
 }
+[type=radio]:checked+div {
+  outline: 3px solid #81E6DA;
+  ;
+}
+div+[type=radio]:checked{
+  outline: 3px solid #81E6DA;
+}
