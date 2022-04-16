@@ -1,0 +1,83 @@
+.movieGenre {
+  margin-top: 10px;
+}
+.card {
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  border-radius: 12px;
+  margin: 5% 10% 5% 10%;
+  background-color: #363538;
+}
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.image img {
+  margin: 15px;
+  border-radius: 15px;
+  border-style: solid;
+  border-color: #202022;
+}
+.genres {
+  display: grid;
+  gap: 0.5em;
+  margin-top: 20px;
+  margin-right: 50%;
+}
+.media-type {
+  text-align: center;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.headerBox {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.addFolder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  background-color: #81e6da;
+  border: none;
+}
+.addFolder:hover,
+.editRate:hover {
+  background-color: #34d9c6;
+}
+.editRate {
+  border-radius: 12px;
+  background-color: #81e6da;
+  border: none;
+}
+.heart-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5px;
+}
+.heart-icon .favorite-icon {
+  color: red;
+}
+.myRate,
+.rates {
+  display: flex;
+  justify-content: space-evenly;
+  margin-right: auto;
+}
+.boxRate {
+  margin-right: auto;
+}
+@media (min-width: 600px) {
+  .genres {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 900px) {
+  .genres {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
