@@ -42,14 +42,20 @@
                 <!-- <div class="note">10/10</div> -->
 
                 <img
-                  src="https://image.tmdb.org/t/p/w300//{{ item.poster_path }}"
+                  src="{{
+                    'https://image.tmdb.org/t/p/w300//' + item.poster_path ||
+                      item.background_image
+                  }}"
+                  onerror="this.src='../../assets/Images/inconnu.png';"
                   alt="Placeholder image"
                 />
               </div>
               <div class="card-content">
                 <div class="media">
                   <div class="media-content">
-                    <h1 class="title is-4">{{ item.name || item.title }}</h1>
+                    <h1 class="title is-4">
+                      {{ item.name || item.title }}
+                    </h1>
                   </div>
                 </div>
                 <div>
@@ -125,7 +131,7 @@
     <div class="px-4 py-3">
       <h5 class="mb-0" style="background-color: white">Notes récentes</h5>
       <div class="p-4 rounded shadow-sm">
-        <app-card></app-card>
+        <!-- <app-card></app-card> -->
       </div>
     </div>
     <div class="px-4 py-3">
