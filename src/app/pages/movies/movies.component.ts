@@ -34,6 +34,24 @@ idfavoris!:string
 this.idFilm=this.route.snapshot.paramMap.get('id')!
 this.cookieValue = this.cookieService.get('user');
    }
+
+   GetNote(){
+axios //REMPLACER ":id" PAR L'IDENTIFIANT DE L'ITEM
+  .get(`http://51.158.72.178:1337/api/notes/${this.idFilm}`, {
+    headers: {
+      Authorization: `Bearer ${this.cookieValue}`,
+    },
+  })
+  .then(response => {
+     let test:number
+   test= response.data.note
+  
+  this.NoteGeneral=test.toFixed(2)
+  })
+  .catch(error => {
+    console.log('An error occurred:', error.response);
+  });
+   }
   ngOnInit(): void {
     console.log(this.idFilm)
     this.api.GetDetailFilm(this.idFilm!).subscribe(data=>{
@@ -47,26 +65,9 @@ this.cookieValue = this.cookieService.get('user');
     // Handle success.
     this.user=response.data
     this.idutilisateur=this.user.id
-
 ///Fonction Afficher Note
-axios //REMPLACER ":id" PAR L'IDENTIFIANT DE L'ITEM
-  .get(`http://51.158.72.178:1337/api/notes/${this.idFilm}`, {
-    headers: {
-      Authorization: `Bearer ${this.cookieValue}`,
-    },
-  })
-  .then(response => {
-     let test:number
-   test= response.data.note
-  
-  this.NoteGeneral=test.toFixed(2)
- 
-  
-   
-  })
-  .catch(error => {
-    console.log('An error occurred:', error.response);
-  });
+this.GetNote()
+
 
 
 
@@ -107,7 +108,7 @@ this.VerifierFavoris(this.ListFilm,this.Film.id)
    }
    else
    {
- this.api.AddFavourite(this.Film,this.idutilisateur,this.cookieValue)
+ this.api.AddFavourite(this.Film,this.idutilisateur,this.cookieValue,"Film")
     this.IsMessage=true;
      setTimeout(()=>{this.isFavourite=true,this.IsMessage=false},500)
    }

@@ -4,10 +4,10 @@
             <div class="columns is-multiline is-mobile is-vcentered" id="col">
                 
                 <div id="photoProfil" class="flex-col-md-1">
-                    <img src="{{photoProfil}}">
+                    <img src="{{avatar}}" style="width: 200px; border-radius: 10px;">
                 </div>
                <form (ngSubmit)="onUpload()" enctype="multipart/form-data">
-                <input style="display: block" type="file" (change)="onFileChanged($event)" #fileInput>
+                <input style="display: none" type="file" (change)="onFileChanged($event)" #fileInput>
                 <button  type="button" (click)="fileInput.click()">Select File</button>
                 <button [disabled]="disabled" type="submit" >Upload!</button>
                 </form>
@@ -18,12 +18,7 @@
                 </div>
             </div>              
         </div>
-        <div class="row col-lg-6 p-4 col-md-7 text-center" id="bio">
-            <h3 class="is-size-3">Description</h3>
-            <p class="mb-0 mt-3" id="paragraphe">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
+     
     </section>
     <div class="row mt-3">
         <div class="px-4 py-3">
@@ -34,9 +29,17 @@
             <div class="result column">
               
                     <div class="test">
-                            <a [routerLink]=" item.title!=null?(['/Movie',item.id]):(['/Serie',item.id])||item.background_image!==null?(['/Videogame',item.id]):(['/Home',item.id])"
+                      
+                           <!---- <a [routerLink]=" 
+                            item.categorie==='Film'?(['/Movie',item.id]):(['/Home',item.id])
+                            ||item.categorie==='Série'?(['/Serie',item.id]):(['/Home',item.id])
+                            ||item.categorie==='Jeu Vidéo'?(['/Videogame',item.id]):(['/Home',item.id])
+                           
+                            "
+                            !-->
+                           
                             
-                        >
+                        
                                         <div class="imgBox">
                                             <figure class="image">
                                                 <a href="https://imgbb.com/"><img src="https://image.tmdb.org/t/p/w300//{{item.poster_path}}" onerror="this.src='../../assets/Images/inconnu.png';" border="0" width="300px" /></a>
@@ -55,13 +58,16 @@
                                         </div>
                 
                                         <footer class="card-footer">
-                                            <a href="#" class="card-footer-item">Plus de détails</a>
+                                            <div class="card-footer-item">
+                                                <button (click)="details(item.id,item.categorie)">Plus de détails</button>
+                                                
+                                               </div>
                                         </footer>
                                  
                 
                 
                           
-                            </a>
+                          
                       
                     </div>
                     </div>

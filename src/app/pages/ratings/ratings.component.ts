@@ -91,7 +91,8 @@ this.cookieValue = this.cookieService.get('user');
     
    this.api.AddRatings(this.user.id,this.idFilm,this.Listcritiere,recommendation,critique,ressenti,this.cookieValue)
    .then(response=>{
-     this.isMessage=true;
+    location.reload()
+     
    })
     
 

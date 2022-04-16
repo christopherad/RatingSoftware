@@ -118,9 +118,8 @@ this.VerifierFavoris(this.ListeVideogames,this.Videogame.id)
    }
    else
    {
- this.apimovies.AddFavourite(this.Videogame,this.idutilisateur,this.cookieValue)
-    this.IsMessage=true;
-setTimeout(()=>{location.reload()},500)
+ this.apimovies.AddFavourite(this.Videogame,this.idutilisateur,this.cookieValue,"Jeu Vidéo")
+ setTimeout(()=>{this.IsMessage=true},500)
    }
    
 
