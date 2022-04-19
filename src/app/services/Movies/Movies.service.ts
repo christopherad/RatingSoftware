@@ -62,20 +62,22 @@ export class MoviesServices {
 
   AddFavourite(item:Item,idutilisateur:string, token:string,categorie:string)
   {
-    console.log(categorie)
+    console.log(item.background_image)
 axios
   .post('http://51.158.72.178:1337/api/favoris/add', {
      
       userId: idutilisateur,
     itemId: item.id,
+    title:item.title,
     description: item.description,
     categorie: categorie,
-    poster_path: item.poster_path,
+    poster_path: item.poster_path||item.background_image,
     overview: item.overview,
     vote_average: item.vote_average,
     vote_count: item.vote_count,
     name: item.name,
     genres: item.genres,
+    
    
   },{
     headers: {

@@ -41,14 +41,16 @@
 
                 <!-- <div class="note">10/10</div> -->
 
-                <img
-                  src="{{
-                    'https://image.tmdb.org/t/p/w300//' + item.poster_path ||
-                      item.background_image
-                  }}"
-                  onerror="this.src='../../assets/Images/inconnu.png';"
-                  alt="Placeholder image"
-                />
+                <ng-container *ngIf="item.categorie!='Jeu Vidéo'">
+                    <img src="{{
+                      'https://image.tmdb.org/t/p/w300//' + item.poster_path 
+                    }}" />
+                </ng-container>
+                <ng-container *ngIf="item.categorie==='Jeu Vidéo'">
+                  <img src={{item.poster_path}}  />
+                </ng-container>
+                
+              
               </div>
               <div class="card-content">
                 <div class="media">
