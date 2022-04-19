@@ -49,8 +49,10 @@ export class VideogamesComponent implements OnInit {
     });
   }
   ngOnInit(): void {
+
     this.api.GetDetailVideogames(this.idVideo!).subscribe((data) => {
       this.Videogame = data;
+      console.log(this.Videogame.background_image)
       axios
         .get('http://51.158.72.178:1337/api/users/me ', {
           headers: {
@@ -127,6 +129,7 @@ export class VideogamesComponent implements OnInit {
       );
       setTimeout(() => {
         this.IsMessage = true;
+        this.isFavourite=true
       }, 500);
     }
   }
