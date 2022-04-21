@@ -15,8 +15,8 @@ import { User } from 'src/app/services/Register/register.service';
 })
 export class RatingsComponent implements OnInit {
   EmojiContent: any = '../../assets/Images/EmojiContent.png';
-  EmojiEnnuye: any = '../../assets/Images/emoji-ennuye.png';
-  EmojiTriste: any = '../../assets/Images/emoji-triste.png';
+  EmojiEnnuye: any = '../../assets/Images/emojiEnnuyé.png';
+  EmojiTriste: any = '../../assets/Images/emojiTriste.png';
   EmojiAmuse: any = '../../assets/Images/emoji-amuse.png';
   EmojiChoque: any = '../../assets/Images/emoji-choque.png';
   content: any = '../../assets/Images/content.png';
