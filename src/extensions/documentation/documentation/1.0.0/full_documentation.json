@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2022-04-08T21:43:59.116Z"
+    "x-generation-date": "2022-04-22T12:41:58.513Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -27,7 +27,7 @@
   },
   "servers": [
     {
-      "url": "http://localhost:1337/api",
+      "url": "http://51.158.72.178:1337/api",
       "description": "Development server"
     }
   ],
@@ -4935,9 +4935,6 @@
                                 "type": "string"
                               },
                               "critere": {},
-                              "note": {
-                                "type": "integer"
-                              },
                               "itemId": {
                                 "type": "integer"
                               },
@@ -4953,6 +4950,9 @@
                                   "Triste",
                                   "Amusé"
                                 ]
+                              },
+                              "note": {
+                                "type": "integer"
                               },
                               "createdAt": {
                                 "type": "string",
@@ -5541,9 +5541,6 @@
                               "type": "string"
                             },
                             "critere": {},
-                            "note": {
-                              "type": "integer"
-                            },
                             "itemId": {
                               "type": "integer"
                             },
@@ -5559,6 +5556,9 @@
                                 "Triste",
                                 "Amusé"
                               ]
+                            },
+                            "note": {
+                              "type": "integer"
                             },
                             "createdAt": {
                               "type": "string",
@@ -6036,9 +6036,6 @@
                         "type": "string"
                       },
                       "critere": {},
-                      "note": {
-                        "type": "integer"
-                      },
                       "itemId": {
                         "type": "integer"
                       },
@@ -6054,6 +6051,9 @@
                           "Triste",
                           "Amusé"
                         ]
+                      },
+                      "note": {
+                        "type": "integer"
                       },
                       "createdAt": {
                         "type": "string",
@@ -6123,9 +6123,6 @@
                               "type": "string"
                             },
                             "critere": {},
-                            "note": {
-                              "type": "integer"
-                            },
                             "itemId": {
                               "type": "integer"
                             },
@@ -6141,6 +6138,9 @@
                                 "Triste",
                                 "Amusé"
                               ]
+                            },
+                            "note": {
+                              "type": "integer"
                             },
                             "createdAt": {
                               "type": "string",
@@ -6638,9 +6638,6 @@
                               "type": "string"
                             },
                             "critere": {},
-                            "note": {
-                              "type": "integer"
-                            },
                             "itemId": {
                               "type": "integer"
                             },
@@ -6656,6 +6653,9 @@
                                 "Triste",
                                 "Amusé"
                               ]
+                            },
+                            "note": {
+                              "type": "integer"
                             },
                             "createdAt": {
                               "type": "string",
@@ -7144,9 +7144,6 @@
                         "type": "string"
                       },
                       "critere": {},
-                      "note": {
-                        "type": "integer"
-                      },
                       "itemId": {
                         "type": "integer"
                       },
@@ -7162,6 +7159,9 @@
                           "Triste",
                           "Amusé"
                         ]
+                      },
+                      "note": {
+                        "type": "integer"
                       },
                       "createdAt": {
                         "type": "string",

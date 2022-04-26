@@ -22,7 +22,7 @@
       "type": "string"
     },
     "overview": {
-      "type": "string"
+      "type": "text"
     },
     "vote_average": {
       "type": "string"

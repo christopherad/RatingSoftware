@@ -21,9 +21,6 @@
     "critere": {
       "type": "json"
     },
-    "note": {
-      "type": "integer"
-    },
     "itemId": {
       "type": "integer"
     },
@@ -39,6 +36,9 @@
         "Triste",
         "Amusé"
       ]
+    },
+    "note": {
+      "type": "integer"
     }
   }
 }

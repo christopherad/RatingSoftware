@@ -46,7 +46,8 @@ module.exports = createCoreController('api::favori.favori', ({ strapi }) => ({
                     genres: item.genres,
                     vote_average: item.vote_average,
                     vote_count: item.vote_count,
-                    name: item.name
+                    name: item.name,
+                    categorie:item.categorie
                 }
             });
             return response;
@@ -71,7 +72,7 @@ module.exports = createCoreController('api::favori.favori', ({ strapi }) => ({
                     const createFav = await this.createFavorites(favoris.request.body);
                     return {reponse : createFav};
                 } else {
-                    const createItem = await this.createItem(favoris.request.body);
+                    await this.createItem(favoris.request.body);
                     const createFav = await this.createFavorites(favoris.request.body);
                     return {reponse : createFav};
                 }
